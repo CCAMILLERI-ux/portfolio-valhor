@@ -438,6 +438,37 @@ a { color: var(--forest); text-underline-offset: 0.18em; }
 .device--mobile .wire > .wire__cols { grid-template-columns: 1fr; height: 32%; gap: 10%; }
 .wire > .wire__cta { width: 45%; height: 6%; min-height: 6px; background: var(--forest); }
 
+/* Découpage vidéo */
+.storyboard {
+  display: grid; gap: 0.9rem;
+  width: min(100%, 460px);
+  padding: 1.1rem;
+  background: var(--forest-night);
+  color: var(--lime-soft);
+  border-radius: var(--radius-card);
+}
+.storyboard .placeholder__tag { justify-self: start; background: var(--lime); border-color: var(--lime); color: var(--forest-deep); }
+.storyboard .placeholder__caption { color: var(--lime-soft); }
+.storyboard__list { display: grid; margin: 0; padding: 0; list-style: none; }
+.storyboard__list li {
+  display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); gap: 0.6rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid rgba(228, 238, 192, 0.2);
+}
+.storyboard__tc { font-size: 0.8rem; font-weight: 700; color: var(--lime); font-variant-numeric: tabular-nums; padding-top: 0.1rem; }
+.storyboard__content { display: grid; gap: 0.2rem; min-width: 0; }
+.storyboard__voix { color: #fff; font-size: 0.92rem; line-height: 1.4; }
+.storyboard__image { font-size: 0.8rem; line-height: 1.4; }
+.storyboard__ecran {
+  justify-self: start;
+  margin-top: 0.15rem;
+  padding: 0.05rem 0.4rem;
+  font-family: var(--font-display); font-size: 0.72rem; font-weight: 800;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--forest-deep); background: var(--lime-soft);
+  border-radius: 2px;
+}
+
 /* Article */
 .article-card {
   display: grid; gap: 0.8rem;

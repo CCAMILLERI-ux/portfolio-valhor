@@ -103,15 +103,34 @@ window.PORTFOLIO = {
       {
         id: "video",
         nom: "Vidéo courte",
-        titre: "Susciter la curiosité en 30 à 45 secondes",
-        texte: "Les gestes des trois métiers, une voix off, des sous-titres et un écran de conclusion vers les ressources.",
-        statut: "en-preparation",
-        mentionStatut: "Vidéo en préparation",
-        media: { type: "video", fichier: null, sousTitres: null, affiche: null, description: null },
-        attente: "« Concevoir ou adapter des visuels, vidéos, infographies et formats multimédias ».",
+        titre: "Susciter la curiosité en 40 secondes",
+        texte:
+          "Un script en trois temps — accroche, trois métiers, question finale — qui reprend les codes de la vidéo institutionnelle de VALHOR : ouverture en anaphore, plans courts centrés sur les gestes, mots-clés affichés au rythme de la voix.",
+        statut: "proposition",
+        statutLibelle: "Script proposé · vidéo en préparation",
+        // Découpage plan par plan. Quand la vidéo existe, renseigner fichier,
+        // sousTitres, affiche et description : le lecteur remplace le découpage.
+        media: {
+          type: "video",
+          fichier: null,
+          sousTitres: null,
+          affiche: null,
+          description: null,
+          format: "Format carré pour le fil LinkedIn · sous-titres incrustés · musique sans paroles",
+          decoupage: [
+            { tc: "0–4 s", image: "Parc urbain fleuri, puis écran partagé boutique / serre", voix: "Derrière ce massif, derrière ce bouquet, derrière cette serre…", ecran: null },
+            { tc: "4–9 s", image: "Gros plans sur des mains : terre, tiges, outils", voix: "… il y a des mains, des gestes, des métiers.", ecran: "Des métiers à découvrir" },
+            { tc: "9–15 s", image: "Semis et repiquage sous serre", voix: "Faire naître et grandir le végétal : c’est l’horticulture.", ecran: "Horticulture" },
+            { tc: "15–21 s", image: "Composition d’un bouquet, conseil en boutique", voix: "Choisir, composer, conseiller : c’est la fleuristerie.", ecran: "Fleuristerie" },
+            { tc: "21–28 s", image: "Croquis d’aménagement, puis plantation d’un massif", voix: "Imaginer, aménager, entretenir : c’est le paysage.", ecran: "Paysage" },
+            { tc: "28–33 s", image: "Mosaïque des trois métiers en simultané", voix: "Trois univers pour travailler avec le vivant.", ecran: "Trois univers" },
+            { tc: "33–40 s", image: "Mains tenant une jeune pousse, puis écran vert final", voix: "Et si votre avenir prenait racine dans le végétal ? Explorez les métiers et les formations.", ecran: "Explorez les métiers et les formations" }
+          ]
+        },
+        attente: "« Concevoir ou adapter des visuels, vidéos, infographies et formats multimédias » ; « veiller […] au respect de l’identité de VALHOR ».",
         experience: null,
-        tags: ["Script", "Format court", "Sous-titrage"],
-        note: "Emplacement réservé au fichier définitif."
+        tags: ["Script", "Voix off", "Montage rythmé", "Sous-titrage", "Veille"],
+        note: "Inspiré des principes de la vidéo « VALHOR, toutes les forces du végétal », sans en reprendre les images, la musique ni la signature."
       },
       {
         id: "article",

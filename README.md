@@ -24,7 +24,7 @@ sources/                    Visuels fournis, en qualité d’origine (non utilis
 ## Mettre à jour les contenus
 
 Tout se fait dans `assets/js/content.js`. La page suit trois blocs : introduction,
-six réalisations (chacune reliée à une attente citée de l’annonce, à mon expérience
+cinq réalisations (chacune reliée à une attente citée de l’annonce, à mon expérience
 et aux compétences illustrées), puis la démarche.
 
 - **Newsletter** (réalisation `newsletter`) : renseigner `media.apercu` (image) et `lien`

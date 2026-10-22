@@ -168,10 +168,21 @@
         (m.sousTitres ? '<track kind="subtitles" srclang="fr" label="Français" src="' + esc(m.sousTitres) + '" default>' : "") +
         "</video>";
     }
-    return '<div class="placeholder placeholder--dark">' +
-      '<p class="placeholder__tag">' + icone("clock") + esc(p.mentionStatut) + "</p>" +
-      '<p class="placeholder__big">30 à 45 s</p>' +
-      '<p class="placeholder__caption">Format vertical, sous-titré</p>' +
+    // En attendant le fichier : le découpage plan par plan.
+    return '<div class="storyboard">' +
+      '<p class="placeholder__tag">' + icone("clock") + "Vidéo en préparation · découpage</p>" +
+      '<ol class="storyboard__list">' +
+      m.decoupage.map(function (d) {
+        return "<li>" +
+          '<p class="storyboard__tc">' + esc(d.tc) + "</p>" +
+          '<div class="storyboard__content">' +
+          '<p class="storyboard__voix"><span class="sr-only">Voix off : </span>« ' + esc(d.voix) + " »</p>" +
+          '<p class="storyboard__image"><span class="sr-only">Images : </span>' + esc(d.image) + "</p>" +
+          (d.ecran ? '<p class="storyboard__ecran"><span class="sr-only">Texte à l’écran : </span>' + esc(d.ecran) + "</p>" : "") +
+          "</div></li>";
+      }).join("") +
+      "</ol>" +
+      '<p class="placeholder__caption">' + esc(m.format) + "</p>" +
       "</div>";
   }
 
