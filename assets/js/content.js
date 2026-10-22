@@ -105,17 +105,21 @@ window.PORTFOLIO = {
         nom: "Vidéo courte",
         titre: "Susciter la curiosité en 40 secondes",
         texte:
-          "Un script en trois temps — accroche, trois métiers, question finale — qui reprend les codes de la vidéo institutionnelle de VALHOR : ouverture en anaphore, plans courts centrés sur les gestes, mots-clés affichés au rythme de la voix.",
-        statut: "proposition",
-        statutLibelle: "Script proposé · vidéo en préparation",
+          "Un montage de 40 secondes en trois temps — accroche, trois métiers, question finale — qui reprend les codes de la vidéo institutionnelle de VALHOR : ouverture en anaphore, plans courts centrés sur les gestes, mots-clés affichés au rythme de la voix.",
+        statut: "disponible",
+        statutLibelle: "Version muette · voix off à venir",
         // Découpage plan par plan. Quand la vidéo existe, renseigner fichier,
         // sousTitres, affiche et description : le lecteur remplace le découpage.
         media: {
           type: "video",
-          fichier: null,
+          fichier: "assets/video/metiers-du-vegetal.mp4",
+          // Version WebM (VP9) pour les navigateurs sans H.264.
+          fichierWebm: "assets/video/metiers-du-vegetal.webm",
+          // Sous-titres incrustés dans l'image ; fichiers .vtt/.srt fournis à part.
           sousTitres: null,
-          affiche: null,
-          description: null,
+          affiche: "assets/video/apercu.jpg",
+          description:
+            "Vidéo muette de 40 secondes, sous-titrée : un parc fleuri, un bouquet, une serre, puis les gestes d’un horticulteur, d’une fleuriste et d’une paysagiste, et une question finale sur fond vert.",
           format: "Format carré pour le fil LinkedIn · sous-titres incrustés · musique sans paroles",
           decoupage: [
             { tc: "0–4 s", image: "Parc urbain fleuri, puis écran partagé boutique / serre", voix: "Derrière ce massif, derrière ce bouquet, derrière cette serre…", ecran: null,
@@ -182,8 +186,8 @@ window.PORTFOLIO = {
         },
         attente: "« Concevoir ou adapter des visuels, vidéos, infographies et formats multimédias » ; « veiller […] au respect de l’identité de VALHOR » ; « préparer les briefs, suivre les livrables ».",
         experience: null,
-        tags: ["Script", "Brief de production", "Voix off", "Montage rythmé", "Sous-titrage", "Veille"],
-        note: "Inspiré des principes de la vidéo « VALHOR, toutes les forces du végétal », sans en reprendre les images, la musique ni la signature."
+        tags: ["Script", "Brief de production", "Montage", "Sous-titrage", "Production assistée par IA", "Veille"],
+        note: "Images générées avec ChatGPT, puis animées (mouvements de caméra lents) et montées avec l’aide de l’IA, sous ma direction. Inspiré des principes de la vidéo « VALHOR, toutes les forces du végétal », sans en reprendre les images, la musique ni la signature."
       },
       {
         id: "article",
@@ -216,7 +220,7 @@ window.PORTFOLIO = {
             { periode: "S1 · mardi", canal: "LinkedIn", format: "Carrousel + texte", statut: "disponible" },
             { periode: "S1 · jeudi", canal: "Site web", format: "Article", statut: "a-valider" },
             { periode: "S2 · mardi", canal: "Newsletter", format: "Intro, 3 métiers, appel", statut: "en-preparation" },
-            { periode: "S2 · jeudi", canal: "LinkedIn", format: "Vidéo sous-titrée", statut: "en-preparation" },
+            { periode: "S2 · jeudi", canal: "LinkedIn", format: "Vidéo sous-titrée", statut: "disponible" },
             { periode: "Fin S2", canal: "Tous", format: "Bilan et ajustements", statut: "en-preparation" }
           ]
         },

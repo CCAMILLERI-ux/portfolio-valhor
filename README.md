@@ -18,7 +18,9 @@ assets/js/main.js           Rendu de la page, maquette LinkedIn, carrousel, agra
 assets/css/styles.css       Mise en forme (palette de travail en variables CSS)
 assets/img/carrousel/       Pages 01 à 05 du carrousel (carrés : WebP 720 px, WebP 1254 px, JPG de secours)
 assets/fonts/               Montserrat (licence SIL OFL)
-sources/                    Visuels fournis, en qualité d’origine (non utilisés directement par le site)
+sources/                    Visuels fournis, en qualité d’origine (carrousel et images de la vidéo)
+assets/video/               Vidéo courte (MP4, WebM, aperçu, sous-titres)
+outils/render_video.py      Script de montage de la vidéo
 ```
 
 ## Mettre à jour les contenus
@@ -30,9 +32,12 @@ et aux compétences illustrées), puis la démarche.
 - **Newsletter** (réalisation `newsletter`) : renseigner `media.apercu` (image) et `lien`
   (fichier HTML ou PDF), puis passer `statut` à `"disponible"`. Le bouton
   « Consulter la version complète » n’apparaît que lorsque `lien` est renseigné.
-- **Vidéo** (réalisation `video`) : renseigner `media.fichier` (par ex. `assets/video/metiers.mp4`),
-  `media.sousTitres` (`.vtt`), `media.affiche` et `media.description`, puis passer `statut`
-  à `"disponible"`. Le lecteur n’apparaît que lorsque le fichier est renseigné.
+- **Vidéo** (réalisation `video`) : fichiers dans `assets/video/` (MP4 H.264 + WebM VP9,
+  image d’aperçu, sous-titres `.vtt`/`.srt`). Version actuelle muette, sous-titres incrustés.
+  Pour la régénérer (nouvelle image, voix off, recalage) :
+  `python3 outils/render_video.py assets/video/metiers-du-vegetal.mp4`, puis réencoder le WebM :
+  `ffmpeg -i assets/video/metiers-du-vegetal.mp4 -c:v libvpx-vp9 -b:v 0 -crf 36 -an assets/video/metiers-du-vegetal.webm`.
+  Images sources dans `sources/video/` ; minutage, mots-clés et sous-titres en tête du script.
 - **Carrousel** : tableau `carrousel` (ordre d’affichage = ordre du tableau).
 - **Fiche de production vidéo** (`fiche-video.html`) : données dans `production` et
   `media.decoupage` de la réalisation `video` (brief, prompts, étapes, contrôle).

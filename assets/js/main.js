@@ -164,7 +164,8 @@
     if (m.fichier) {
       return '<video class="media-video" controls preload="metadata" playsinline' + (m.affiche ? ' poster="' + esc(m.affiche) + '"' : "") +
         (m.description ? ' aria-label="' + esc(m.description) + '"' : "") + ">" +
-        '<source src="' + esc(m.fichier) + '">' +
+        '<source src="' + esc(m.fichier) + '" type="video/mp4">' +
+        (m.fichierWebm ? '<source src="' + esc(m.fichierWebm) + '" type="video/webm">' : "") +
         (m.sousTitres ? '<track kind="subtitles" srclang="fr" label="Français" src="' + esc(m.sousTitres) + '" default>' : "") +
         "</video>";
     }
@@ -230,6 +231,12 @@
           '<ol class="transcript__list">' + SLIDES.map(function (d) {
             return '<li><p class="transcript__title">' + d.numero + " · " + esc(d.transcription.titre) + "</p>" +
               d.transcription.texte.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("") + "</li>";
+          }).join("") + "</ol></details>";
+      }
+      if (p.id === "video" && p.media.fichier) {
+        extra = '<details class="transcript"><summary>Lire le texte de la vidéo</summary>' +
+          '<ol class="transcript__list">' + p.media.decoupage.map(function (d) {
+            return "<li><p><strong>" + esc(d.tc) + "</strong> — " + esc(d.voix) + "</p></li>";
           }).join("") + "</ol></details>";
       }
       if (p.indicateurs) {

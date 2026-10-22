@@ -438,6 +438,14 @@ a { color: var(--forest); text-underline-offset: 0.18em; }
 .device--mobile .wire > .wire__cols { grid-template-columns: 1fr; height: 32%; gap: 10%; }
 .wire > .wire__cta { width: 45%; height: 6%; min-height: 6px; background: var(--forest); }
 
+/* Vidéo */
+.media-video {
+  width: min(100%, 460px);
+  aspect-ratio: 1 / 1;
+  background: var(--forest-night);
+  border-radius: var(--radius-card);
+}
+
 /* Découpage vidéo */
 .storyboard {
   display: grid; gap: 0.9rem;
