@@ -55,3 +55,8 @@ Aucun audit de conformité RGAA n’a été réalisé.
 Visuels et contenus produits avec l’aide de l’IA, sous la direction éditoriale et visuelle de
 Caroline Camilleri. Les personnes représentées sont des images générées.
 Aucun formulaire, aucun outil de suivi, aucune police externe.
+
+## Typographie
+
+Titres en Montserrat (licence libre SIL OFL, fichier dans `assets/fonts/`, hébergé sur le site :
+aucun appel à un service externe). Texte courant en police système.

@@ -79,7 +79,7 @@
     '<div class="site-footer__notes">' +
     "<p>" + esc(C.meta.mention) + "</p>" +
     "<p>" + esc(C.meta.ia) + "</p>" +
-    "<p>Portfolio personnel et indépendant : ce site n’est pas le site officiel de VALHOR et n’engage pas l’interprofession. La palette de couleurs est une proposition de travail, et non une charte officielle.</p>" +
+    "<p>Portfolio personnel et indépendant : ce site n’est pas le site officiel de VALHOR et n’engage pas l’interprofession. La palette de couleurs s’inspire de l’univers public de VALHOR ; c’est une proposition de travail, et non sa charte officielle. Typographie des titres : Montserrat (licence libre SIL OFL).</p>" +
     "<p>" + esc(C.intro.destinataire.mention) + "</p>" +
     "<p>Site conçu en tenant compte des bonnes pratiques d’accessibilité. Aucun audit de conformité n’a été réalisé. Aucun outil de suivi n’est utilisé.</p>" +
     '<p><a href="#haut">Revenir en haut de la page</a></p>' +
