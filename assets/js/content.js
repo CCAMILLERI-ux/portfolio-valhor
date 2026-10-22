@@ -46,40 +46,30 @@ window.PORTFOLIO = {
     surtitre: "Candidature · Chargé de projet Communication digitale et éditoriale",
     titre: "Valoriser les métiers du végétal, du message aux contenus",
     texte:
-      "Pour accompagner ma candidature chez VALHOR, j’ai imaginé une campagne exploratoire sur l’attractivité des métiers, déclinée en six réalisations qui répondent aux missions du poste.",
+      "Pour accompagner ma candidature chez VALHOR, j’ai imaginé une campagne exploratoire sur l’attractivité des métiers, déclinée en cinq réalisations qui répondent aux missions du poste.",
     profil:
       "Cheffe de projet digital, j’ai une expérience en communication digitale et institutionnelle au Marché International de Rungis (SEMMARIS).",
     bouton: "Découvrir les réalisations"
   },
 
   realisations: {
-    titre: "Six réalisations pour illustrer les missions du poste",
+    titre: "Cinq réalisations pour illustrer les missions du poste",
     intro:
       "Un même message, « Derrière chaque espace végétalisé, des métiers à découvrir », décliné par canal. Public visé : les personnes en orientation ou en reconversion ; relais : la filière, la formation, les partenaires institutionnels.",
     projets: [
       {
         id: "carrousel",
-        nom: "Carrousel LinkedIn",
+        nom: "Publication LinkedIn",
         titre: "Faire découvrir trois métiers sur LinkedIn",
         texte:
-          "Cinq pages pour présenter l’horticulture, la fleuristerie et le paysage : un message simple, des métiers incarnés, une lecture progressive.",
+          "Un texte d’accroche et un carrousel de cinq visuels : un message simple, des métiers incarnés, une lecture progressive.",
         statut: "disponible",
-        media: { type: "carrousel" },
-        attente:
-          "« Concevoir, planifier et publier des contenus adaptés aux différentes plateformes, notamment LinkedIn » ; « concevoir ou adapter des visuels ».",
-        experience:
-          "Animation des réseaux sociaux du Marché de Rungis et développement de ses communautés, de 1 000 à plus de 100 000 abonnés.",
-        tags: ["Social media", "LinkedIn", "Direction visuelle", "Production assistée par IA"],
-        note: "Sert l’ambition « attractivité des métiers » du projet Horizon 2030. Visuels générés avec l’IA sous ma direction."
-      },
-      {
-        id: "publication",
-        nom: "Publication LinkedIn",
-        titre: "Écrire le texte qui accompagne le carrousel",
-        texte: "Une accroche incarnée, les trois univers, une question pour ouvrir la conversation.",
-        statut: "proposition",
+        statutLibelle: "Visuels disponibles · texte proposé",
         media: {
           type: "publication",
+          auteur: "Caroline Camilleri",
+          sousTitre: "Proposition de publication · non diffusée",
+          titreDocument: "Les métiers du végétal",
           paragraphes: [
             "Derrière les espaces végétalisés que nous côtoyons, il y a des femmes, des hommes et des savoir-faire.",
             "Faire grandir les plantes, composer avec les fleurs, concevoir et entretenir les espaces extérieurs : les métiers du végétal ouvrent des voies variées.",
@@ -89,10 +79,11 @@ window.PORTFOLIO = {
           hashtags: ["#MétiersDuVégétal", "#Horticulture", "#Fleuristerie", "#Paysage"]
         },
         attente:
-          "« Animer les communautés digitales […] et favoriser l’engagement des audiences » ; « veiller à la qualité rédactionnelle ».",
-        experience: "Rédaction de contenus éditoriaux et de publications pour les réseaux sociaux.",
-        tags: ["Rédaction", "Engagement", "Cohérence des messages"],
-        note: "Proposition de texte, non publiée."
+          "« Concevoir, planifier et publier des contenus adaptés aux différentes plateformes, notamment LinkedIn » ; « concevoir ou adapter des visuels » ; « favoriser l’engagement des audiences ».",
+        experience:
+          "Animation des réseaux sociaux du Marché de Rungis et développement de ses communautés, de 1 000 à plus de 100 000 abonnés.",
+        tags: ["Social media", "LinkedIn", "Rédaction", "Direction visuelle", "Production assistée par IA"],
+        note: "Sert l’ambition « attractivité des métiers » du projet Horizon 2030. Visuels générés avec l’IA sous ma direction ; maquette sans compte officiel ni réactions."
       },
       {
         id: "newsletter",
@@ -179,10 +170,10 @@ window.PORTFOLIO = {
       role: "Couverture",
       image: "assets/img/carrousel/valhor-01-couverture",
       alt:
-        "Page 1, couverture. Titre : Derrière chaque espace végétalisé, des métiers à découvrir. Photo d’une jardinière plantant des fleurs dans un massif, un collègue travaillant en arrière-plan.",
+        "Page 1, couverture. Titre : Derrière chaque espace végétalisé, des métiers à découvrir. Photo d’une professionnelle de dos, portant un plateau de plantes fleuries dans une pépinière.",
       transcription: {
         titre: "Derrière chaque espace végétalisé, des métiers à découvrir.",
-        texte: ["Horticulture, fleuristerie, paysage : trois univers professionnels du végétal."]
+        texte: ["Horticulture, fleuristerie, paysage : découvrez trois univers professionnels du végétal."]
       }
     },
     {
@@ -190,7 +181,7 @@ window.PORTFOLIO = {
       role: "Horticulture",
       image: "assets/img/carrousel/valhor-02-horticulture",
       alt:
-        "Page 2, horticulture. Titre : Faire naître et grandir le végétal. Photo d’une horticultrice tenant un jeune plant en motte dans une serre.",
+        "Page 2, horticulture. Titre : Faire naître et grandir le végétal. Photo d’un jeune horticulteur travaillant des plants sous une serre.",
       transcription: {
         titre: "Horticulture — Faire naître et grandir le végétal",
         texte: [
@@ -204,7 +195,7 @@ window.PORTFOLIO = {
       role: "Fleuristerie",
       image: "assets/img/carrousel/valhor-03-fleuristerie",
       alt:
-        "Page 3, fleuristerie. Titre : Donner forme aux émotions. Photo d’une fleuriste ajustant un bouquet dans un atelier fleuri.",
+        "Page 3, fleuristerie. Titre : Donner forme aux émotions. Photo d’une fleuriste composant un bouquet de roses et de feuillages dans sa boutique.",
       transcription: {
         titre: "Fleuristerie — Donner forme aux émotions",
         texte: [
@@ -218,7 +209,7 @@ window.PORTFOLIO = {
       role: "Paysage",
       image: "assets/img/carrousel/valhor-04-paysage",
       alt:
-        "Page 4, paysage. Titre : Imaginer, aménager, entretenir. Photo d’une paysagiste plantant dans un massif d’un espace urbain.",
+        "Page 4, paysage. Titre : Imaginer, aménager, entretenir. Photo d’un paysagiste casqué entretenant un massif fleuri avec une débroussailleuse.",
       transcription: {
         titre: "Paysage — Imaginer, aménager, entretenir",
         texte: [
@@ -232,7 +223,7 @@ window.PORTFOLIO = {
       role: "Conclusion",
       image: "assets/img/carrousel/valhor-05-conclusion",
       alt:
-        "Page 5, conclusion. Titre : Et si votre avenir prenait racine dans le végétal ? Photo de mains tenant de la terre et de jeunes pousses.",
+        "Page 5, conclusion. Titre : Et si votre avenir prenait racine dans le végétal ? Photo d’un parc urbain fleuri avec un banc, des arbres et des immeubles en arrière-plan.",
       transcription: {
         titre: "Et si votre avenir prenait racine dans le végétal ?",
         texte: [

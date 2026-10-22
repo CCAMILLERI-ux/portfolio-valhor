@@ -48,8 +48,8 @@
   function picture(base, alt, opts) {
     opts = opts || {};
     return "<picture>" +
-      '<source type="image/webp" srcset="' + esc(base) + "-720.webp 720w, " + esc(base) + '.webp 1122w" sizes="' + (opts.sizes || "(min-width: 900px) 440px, 92vw") + '">' +
-      '<img src="' + esc(base) + '.jpg" width="1122" height="1402" alt="' + esc(alt) + '"' +
+      '<source type="image/webp" srcset="' + esc(base) + "-720.webp 720w, " + esc(base) + '.webp 1254w" sizes="' + (opts.sizes || "(min-width: 900px) 460px, 92vw") + '">' +
+      '<img src="' + esc(base) + '.jpg" width="1254" height="1254" alt="' + esc(alt) + '"' +
       (opts.eager ? ' fetchpriority="high"' : ' loading="lazy"') + ' decoding="async">' +
       "</picture>";
   }
@@ -92,36 +92,57 @@
   var SLIDES = C.carrousel;
   var n = SLIDES.length;
 
-  function mediaCarrousel() {
-    return '<div class="carousel" data-carousel aria-roledescription="carrousel" role="region" aria-label="Carrousel LinkedIn, ' + n + ' pages">' +
+  var ACTIONS = {
+    like: '<path d="M7 11v9H4v-9h3zm0 0l4-7c1.5 0 2.5 1 2.2 2.6L12.8 10H19a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 17.8 20H7"/>',
+    comment: '<path d="M4 5h16v11H9l-5 4V5z"/>',
+    repost: '<path d="M7 7h11l-3-3M17 17H6l3 3M18 7v5M6 17v-5"/>',
+    send: '<path d="M21 3L3 10l7 3 3 7 8-17zM10 13l5-5"/>',
+    globe: '<circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c2.5 2.5 2.5 13.5 0 16M12 4c-2.5 2.5-2.5 13.5 0 16"/>'
+  };
+  function svg(path, cls) {
+    return '<svg class="' + cls + '" aria-hidden="true" focusable="false" viewBox="0 0 24 24">' + path + "</svg>";
+  }
+
+  // Maquette de publication LinkedIn : texte au-dessus, carrousel « document » en dessous.
+  // Volontairement sans compte officiel ni chiffres de réactions.
+  function mediaPublication(p) {
+    var m = p.media;
+    var initiales = m.auteur.split(" ").map(function (w) { return w.charAt(0); }).join("");
+    return '<figure class="li-post">' +
+      '<figcaption class="sr-only">Maquette de publication LinkedIn proposée, non diffusée.</figcaption>' +
+      '<div class="li-post__head">' +
+      '<span class="li-post__avatar" aria-hidden="true">' + esc(initiales) + "</span>" +
+      '<div><p class="li-post__author">' + esc(m.auteur) + "</p>" +
+      '<p class="li-post__meta">' + esc(m.sousTitre) + " · " + svg(ACTIONS.globe, "li-post__globe") + "</p></div>" +
+      "</div>" +
+      '<div class="li-post__text is-collapsed" id="li-texte">' +
+      m.paragraphes.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("") +
+      '<p class="li-post__tags">' + m.hashtags.map(esc).join(" ") + "</p>" +
+      "</div>" +
+      '<button class="li-post__more" type="button" aria-expanded="false" aria-controls="li-texte">… plus<span class="sr-only"> : afficher tout le texte</span></button>' +
+      '<div class="carousel" data-carousel aria-roledescription="carrousel" role="region" aria-label="Carrousel LinkedIn, ' + n + ' pages">' +
+      '<div class="carousel__frame">' +
       '<div class="carousel__viewport" tabindex="0" aria-describedby="carousel-aide">' +
       SLIDES.map(function (d, i) {
         return '<div class="carousel__slide" role="group" aria-roledescription="page" aria-label="' + (i + 1) + " sur " + n + " : " + esc(d.role) + '">' +
           picture(d.image, d.alt, { eager: i === 0 }) + "</div>";
       }).join("") +
       "</div>" +
-      '<p class="sr-only" id="carousel-aide">Utilisez les flèches gauche et droite du clavier pour changer de page.</p>' +
-      '<div class="carousel__controls">' +
-      '<button class="btn-icon" type="button" data-action="prev" aria-label="Page précédente">' + icone("prev") + "</button>" +
-      '<p class="carousel__counter" aria-hidden="true"><span data-current>1</span> / ' + n + "</p>" +
-      '<button class="btn-icon" type="button" data-action="next" aria-label="Page suivante">' + icone("next") + "</button>" +
-      '<button class="btn btn--ghost carousel__zoom" type="button" data-action="zoom">' + icone("expand") + '<span>Agrandir<span class="sr-only"> la page affichée</span></span></button>' +
+      '<p class="carousel__bar" aria-hidden="true">' + esc(m.titreDocument) + ' · <span data-current>1</span> / ' + n + "</p>" +
+      '<button class="btn-icon carousel__arrow carousel__arrow--prev" type="button" data-action="prev" aria-label="Page précédente">' + icone("prev") + "</button>" +
+      '<button class="btn-icon carousel__arrow carousel__arrow--next" type="button" data-action="next" aria-label="Page suivante">' + icone("next") + "</button>" +
+      '<button class="btn-icon carousel__zoom" type="button" data-action="zoom" aria-label="Agrandir la page affichée">' + icone("expand") + "</button>" +
+      '<span class="carousel__progress" aria-hidden="true"><span data-progress></span></span>' +
       "</div>" +
+      '<p class="sr-only" id="carousel-aide">Utilisez les flèches gauche et droite du clavier pour changer de page.</p>' +
       '<p class="sr-only" aria-live="polite" data-status></p>' +
-      "</div>";
-  }
-
-  function mediaPublication(m) {
-    return '<figure class="post">' +
-      '<p class="post__label">Proposition éditoriale · non publiée</p>' +
-      '<blockquote class="post__body">' +
-      m.paragraphes.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
-      '<p class="post__tags">' + m.hashtags.map(esc).join(" ") + "</p>" +
-      "</blockquote>" +
-      '<figcaption class="post__media">' +
-      '<img src="' + esc(SLIDES[0].image) + '-720.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async">' +
-      "<span>Accompagne le carrousel de " + n + " pages</span>" +
-      "</figcaption></figure>";
+      "</div>" +
+      '<div class="li-post__actions" aria-hidden="true">' +
+      [["like", "J’aime"], ["comment", "Commenter"], ["repost", "Republier"], ["send", "Envoyer"]].map(function (a) {
+        return "<span>" + svg(ACTIONS[a[0]], "li-post__icon") + a[1] + "</span>";
+      }).join("") +
+      "</div>" +
+      "</figure>";
   }
 
   function mediaNewsletter(p) {
@@ -173,8 +194,7 @@
   }
 
   var MEDIAS = {
-    carrousel: mediaCarrousel,
-    publication: function (p) { return mediaPublication(p.media); },
+    publication: mediaPublication,
     newsletter: mediaNewsletter,
     video: mediaVideo,
     article: mediaArticle,
@@ -257,8 +277,19 @@
   var btnZoom = root.querySelector('[data-action="zoom"]');
   var current = root.querySelector("[data-current]");
   var status = root.querySelector("[data-status]");
+  var progress = root.querySelector("[data-progress]");
   var lightbox = document.getElementById("lightbox");
   var index = 0;
+
+  // « … plus » : déplie le texte de la publication, comme sur LinkedIn.
+  var more = document.querySelector(".li-post__more");
+  more.addEventListener("click", function () {
+    document.getElementById("li-texte").classList.remove("is-collapsed");
+    more.hidden = true;
+    more.setAttribute("aria-expanded", "true");
+    document.getElementById("li-texte").setAttribute("tabindex", "-1");
+    document.getElementById("li-texte").focus();
+  });
 
   function show(i, announce) {
     index = Math.max(0, Math.min(slides.length - 1, i));
@@ -269,6 +300,7 @@
       if ("inert" in s) s.inert = !active;
     });
     current.textContent = index + 1;
+    progress.style.width = ((index + 1) / slides.length * 100) + "%";
     if (announce) status.textContent = "Page " + (index + 1) + " sur " + slides.length + " : " + SLIDES[index].role;
 
     // Pas de bouclage : on désactive en bout de course, sans perdre le focus.

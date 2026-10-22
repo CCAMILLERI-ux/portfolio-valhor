@@ -14,11 +14,11 @@ Pour un serveur local facultatif : `npx serve .` puis ouvrir l’adresse indiqu�
 ```
 index.html                  Squelette de la page
 assets/js/content.js        TOUS les textes, chemins d’images et statuts (fichier à modifier)
-assets/js/main.js           Rendu de la page, carrousel, agrandissement, menu mobile
+assets/js/main.js           Rendu de la page, maquette LinkedIn, carrousel, agrandissement
 assets/css/styles.css       Mise en forme (palette de travail en variables CSS)
-assets/img/carrousel/       Pages 01 à 05 du carrousel (WebP 720 px, WebP 1122 px, JPG de secours)
+assets/img/carrousel/       Pages 01 à 05 du carrousel (carrés : WebP 720 px, WebP 1254 px, JPG de secours)
 assets/fonts/               Montserrat (licence SIL OFL)
-valhor-0X-*.png.png         Fichiers sources fournis (non utilisés directement par le site)
+sources/                    Visuels fournis, en qualité d’origine (non utilisés directement par le site)
 ```
 
 ## Mettre à jour les contenus
