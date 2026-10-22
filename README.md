@@ -34,6 +34,8 @@ et aux compétences illustrées), puis la démarche.
   `media.sousTitres` (`.vtt`), `media.affiche` et `media.description`, puis passer `statut`
   à `"disponible"`. Le lecteur n’apparaît que lorsque le fichier est renseigné.
 - **Carrousel** : tableau `carrousel` (ordre d’affichage = ordre du tableau).
+- **Fiche de production vidéo** (`fiche-video.html`) : données dans `production` et
+  `media.decoupage` de la réalisation `video` (brief, prompts, étapes, contrôle).
 
 Pour régénérer les images optimisées à partir d’un nouveau PNG source :
 

@@ -542,6 +542,45 @@ a { color: var(--forest); text-underline-offset: 0.18em; }
   max-width: 70ch;
 }
 
+/* ---------- Fiche de production ---------- */
+
+.fiche-grid { display: grid; gap: 2.5rem; }
+.fiche-grid > div { display: grid; gap: 1rem; align-content: start; min-width: 0; }
+.fiche-grid h2 { font-size: var(--fs-h3); }
+@media (min-width: 900px) { .fiche-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; } }
+.fiche-brief { display: grid; gap: 0; margin: 0; }
+.fiche-brief > div { padding: 0.7rem 0; border-top: 1px solid var(--border); }
+.fiche-brief dt { font-weight: 700; color: var(--forest); }
+.fiche-brief dd { margin: 0.15rem 0 0; color: var(--ink); }
+.fiche-list, .fiche-check { display: grid; gap: 0.45rem; margin: 0; padding-left: 1.2rem; }
+.fiche-check { list-style: none; padding: 0; }
+.fiche-check li { position: relative; padding-left: 1.7rem; }
+.fiche-check li::before {
+  content: ""; position: absolute; left: 0; top: 0.2em;
+  width: 1.05rem; height: 1.05rem;
+  border: 2px solid var(--forest); border-radius: 3px;
+}
+.fiche-voix { margin: 0; padding: 1rem 1.2rem; background: var(--tint); border-left: 3px solid var(--lime); border-radius: 0 var(--radius-card) var(--radius-card) 0; font-size: 1.05rem; }
+.fiche-intro { margin: 0.6rem 0 1.5rem; }
+.fiche-plans { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+@media (min-width: 900px) { .fiche-plans { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.fiche-plan { display: grid; gap: 0.6rem; align-content: start; min-width: 0; padding: 1.1rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-card); }
+.fiche-plan__head { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--forest); font-variant-numeric: tabular-nums; }
+.fiche-plan__body { display: grid; gap: 0.5rem; margin: 0; }
+.fiche-plan__body dt { font-size: var(--fs-small); font-weight: 700; color: var(--muted); }
+.fiche-plan__body dd { margin: 0.1rem 0 0; display: grid; gap: 0.4rem; justify-items: start; min-width: 0; }
+.fiche-plan__body code {
+  display: block; width: 100%;
+  padding: 0.5rem 0.6rem;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 0.82rem; line-height: 1.45;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-control);
+  overflow-wrap: anywhere;
+}
+.fiche-copy { min-height: 36px; padding: 0.3rem 0.7rem; font-size: 0.85rem; }
+.fiche-steps { display: grid; gap: 0.9rem; margin: 0; padding-left: 1.3rem; }
+.fiche-steps li p + p { color: var(--muted); }
+.fiche-duree { font-size: var(--fs-small); color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+
 /* ---------- Pied de page ---------- */
 
 .site-footer { background: var(--forest-night); color: var(--lime-soft); padding-block: 2rem; font-size: var(--fs-small); }

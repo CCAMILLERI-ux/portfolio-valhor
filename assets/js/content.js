@@ -118,18 +118,71 @@ window.PORTFOLIO = {
           description: null,
           format: "Format carré pour le fil LinkedIn · sous-titres incrustés · musique sans paroles",
           decoupage: [
-            { tc: "0–4 s", image: "Parc urbain fleuri, puis écran partagé boutique / serre", voix: "Derrière ce massif, derrière ce bouquet, derrière cette serre…", ecran: null },
-            { tc: "4–9 s", image: "Gros plans sur des mains : terre, tiges, outils", voix: "… il y a des mains, des gestes, des métiers.", ecran: "Des métiers à découvrir" },
-            { tc: "9–15 s", image: "Semis et repiquage sous serre", voix: "Faire naître et grandir le végétal : c’est l’horticulture.", ecran: "Horticulture" },
-            { tc: "15–21 s", image: "Composition d’un bouquet, conseil en boutique", voix: "Choisir, composer, conseiller : c’est la fleuristerie.", ecran: "Fleuristerie" },
-            { tc: "21–28 s", image: "Croquis d’aménagement, puis plantation d’un massif", voix: "Imaginer, aménager, entretenir : c’est le paysage.", ecran: "Paysage" },
-            { tc: "28–33 s", image: "Mosaïque des trois métiers en simultané", voix: "Trois univers pour travailler avec le vivant.", ecran: "Trois univers" },
-            { tc: "33–40 s", image: "Mains tenant une jeune pousse, puis écran vert final", voix: "Et si votre avenir prenait racine dans le végétal ? Explorez les métiers et les formations.", ecran: "Explorez les métiers et les formations" }
+            { tc: "0–4 s", image: "Parc urbain fleuri, puis écran partagé boutique / serre", voix: "Derrière ce massif, derrière ce bouquet, derrière cette serre…", ecran: null,
+              prompt: "Sunny urban park with lush flower beds and young trees, wooden bench, modern buildings softly blurred in background, natural light, square format, photorealistic, no text.",
+              mouvement: "Slow forward dolly through the flower beds." },
+            { tc: "4–9 s", image: "Gros plans sur des mains : terre, tiges, outils", voix: "… il y a des mains, des gestes, des métiers.", ecran: "Des métiers à découvrir",
+              prompt: "Close-up of a gardener's hands in soil, planting a young seedling, gloves and small trowel, shallow depth of field, warm daylight, square format, photorealistic, no text.",
+              mouvement: "Hands gently press the soil, subtle camera push-in." },
+            { tc: "9–15 s", image: "Semis et repiquage sous serre", voix: "Faire naître et grandir le végétal : c’est l’horticulture.", ecran: "Horticulture",
+              prompt: "Young horticulturist in a greenhouse transplanting seedlings into pots, rows of young plants, soft morning light through glass roof, square format, photorealistic, no text.",
+              mouvement: "Slow lateral tracking shot along the bench." },
+            { tc: "15–21 s", image: "Composition d’un bouquet, conseil en boutique", voix: "Choisir, composer, conseiller : c’est la fleuristerie.", ecran: "Fleuristerie",
+              prompt: "Florist in her shop composing a bouquet of roses, eucalyptus and white flowers, shelves of plants behind, soft natural light, square format, photorealistic, no text.",
+              mouvement: "She adds a stem to the bouquet, slow orbit around her." },
+            { tc: "21–28 s", image: "Croquis d’aménagement, puis plantation d’un massif", voix: "Imaginer, aménager, entretenir : c’est le paysage.", ecran: "Paysage",
+              prompt: "Landscape designer sketching a garden plan on a clipboard next to an urban flower bed being planted with perennials, sunny day, square format, photorealistic, no text.",
+              mouvement: "Camera tilts from the sketch down to the planting." },
+            { tc: "28–33 s", image: "Mosaïque des trois métiers en simultané", voix: "Trois univers pour travailler avec le vivant.", ecran: "Trois univers",
+              prompt: null,
+              mouvement: "Pas de génération : mosaïque construite au montage avec les plans horticulture, fleuristerie et paysage." },
+            { tc: "33–40 s", image: "Mains tenant une jeune pousse, puis écran vert final", voix: "Et si votre avenir prenait racine dans le végétal ? Explorez les métiers et les formations.", ecran: "Explorez les métiers et les formations",
+              prompt: "Two weathered hands holding a young green sprout in rich soil, soft blurred green background, golden light, square format, photorealistic, no text.",
+              mouvement: "Very slow push-in, leaves moving slightly in the breeze; end on a solid green card added in editing." }
           ]
         },
-        attente: "« Concevoir ou adapter des visuels, vidéos, infographies et formats multimédias » ; « veiller […] au respect de l’identité de VALHOR ».",
+        bouton: { libelle: "Consulter la fiche de production", href: "fiche-video.html" },
+        // Fiche de production (page fiche-video.html) : brief prête à transmettre.
+        production: {
+          titre: "Fiche de production — vidéo « Les métiers du végétal »",
+          intro:
+            "Brief de production pour une vidéo de 40 secondes réalisée avec l’IA. Elle peut servir telle quelle à un prestataire ou à une production en interne.",
+          brief: [
+            { terme: "Objectif", texte: "Susciter la curiosité pour les métiers de l’horticulture, de la fleuristerie et du paysage." },
+            { terme: "Public", texte: "Personnes en orientation ou en reconversion ; relais : filière, formation, partenaires institutionnels." },
+            { terme: "Message", texte: "« Derrière chaque espace végétalisé, des métiers à découvrir. »" },
+            { terme: "Diffusion", texte: "Fil LinkedIn, en relais du carrousel et de l’article." },
+            { terme: "Durée", texte: "40 secondes, en trois temps : accroche (0–9 s), trois métiers (9–33 s), question finale (33–40 s)." },
+            { terme: "Références", texte: "Codes de la vidéo « VALHOR, toutes les forces du végétal » : ouverture en anaphore, plans courts sur les gestes, mots-clés à l’écran. Sans en reprendre les images, la musique ni la signature." }
+          ],
+          livrables: [
+            "Vidéo MP4 (H.264), 1080 × 1080 px, 30 images par seconde",
+            "Sous-titres en fichier .srt ou .vtt, en plus des sous-titres incrustés",
+            "Une image d’aperçu (1080 × 1080 px)",
+            "Les fichiers de travail : images fixes et plans animés retenus"
+          ],
+          etapes: [
+            { titre: "Images fixes", duree: "≈ 45 min", texte: "Une image par plan, avec l’outil utilisé pour le carrousel. Format carré, lumière naturelle, personnes différentes pour chaque métier, aucun texte dans l’image." },
+            { titre: "Animation", duree: "≈ 1 h", texte: "Image vers vidéo, 5 secondes par plan, mouvement de caméra lent et simple. Deux ou trois versions par plan ; garder la plus naturelle." },
+            { titre: "Voix off", duree: "≈ 15 min", texte: "Voix française chaleureuse et posée, débit calme (environ 65 mots pour 40 secondes). Synthèse vocale ou enregistrement personnel dans une pièce calme." },
+            { titre: "Montage", duree: "≈ 1 h", texte: "Toile carrée. Voix posée en premier, plans calés dessus. Écran partagé à l’ouverture, mosaïque à 28 s. Mots-clés en capitales, Montserrat gras, au moment où ils sont prononcés. Musique sans paroles sous licence de diffusion." },
+            { titre: "Export", duree: "≈ 5 min", texte: "MP4 1080 × 1080, sous-titres exportés à part, image d’aperçu." }
+          ],
+          controle: [
+            "Orthographe des mots-clés et des sous-titres relue mot à mot",
+            "Mains, visages et outils sans défaut de génération",
+            "Aucun texte généré dans les images, aucun logo",
+            "Voix de synthèse ou personnelle : jamais de clonage d’une personne réelle",
+            "Licence de la musique compatible avec une diffusion en ligne",
+            "Écran final : « Proposition exploratoire · Caroline Camilleri »",
+            "Sous-titres lisibles sur mobile, contraste suffisant",
+            "Validation métier et communication avant diffusion"
+          ],
+          note: "Les outils d’IA évoluent vite : vérifier les offres et les licences au moment de produire."
+        },
+        attente: "« Concevoir ou adapter des visuels, vidéos, infographies et formats multimédias » ; « veiller […] au respect de l’identité de VALHOR » ; « préparer les briefs, suivre les livrables ».",
         experience: null,
-        tags: ["Script", "Voix off", "Montage rythmé", "Sous-titrage", "Veille"],
+        tags: ["Script", "Brief de production", "Voix off", "Montage rythmé", "Sous-titrage", "Veille"],
         note: "Inspiré des principes de la vidéo « VALHOR, toutes les forces du végétal », sans en reprendre les images, la musique ni la signature."
       },
       {

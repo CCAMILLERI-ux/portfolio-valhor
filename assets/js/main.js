@@ -236,6 +236,9 @@
         extra = '<details class="transcript"><summary>Voir les indicateurs suivis</summary>' +
           liste(p.indicateurs, "transcript__plain") + "</details>";
       }
+      if (p.bouton) {
+        extra += '<a class="btn btn--primary" href="' + esc(p.bouton.href) + '">' + esc(p.bouton.libelle) + icone("arrow") + "</a>";
+      }
       if (p.lien) {
         extra += '<a class="btn btn--primary" href="' + esc(p.lien) + '">Consulter la version complète' + icone("arrow") + "</a>";
       }
