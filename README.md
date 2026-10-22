@@ -17,24 +17,23 @@ assets/js/content.js        TOUS les textes, chemins d’images et statuts (fich
 assets/js/main.js           Rendu de la page, carrousel, agrandissement, menu mobile
 assets/css/styles.css       Mise en forme (palette de travail en variables CSS)
 assets/img/carrousel/       Pages 01 à 05 du carrousel (WebP 720 px, WebP 1122 px, JPG de secours)
-assets/img/photos/          Recadrages photo issus des visuels, utilisés dans « La démarche »
+assets/fonts/               Montserrat (licence SIL OFL)
 valhor-0X-*.png.png         Fichiers sources fournis (non utilisés directement par le site)
 ```
 
 ## Mettre à jour les contenus
 
-Tout se fait dans `assets/js/content.js`.
+Tout se fait dans `assets/js/content.js`. La page suit trois blocs : introduction,
+six réalisations (chacune reliée à une attente citée de l’annonce, à mon expérience
+et aux compétences illustrées), puis la démarche.
 
-- **Newsletter** : renseigner `realisations.newsletter.apercus.ordinateur` et `.mobile`
-  (chemins d’images, par ex. `assets/img/newsletter/desktop.webp`), puis
-  `lienVersionComplete` (fichier HTML ou PDF), et passer `statut` à `"disponible"`.
-  Le lien « Consulter la newsletter complète » n’apparaît que lorsque ce chemin est renseigné.
-- **Vidéo** : renseigner `realisations.video.fichier` (par ex. `assets/video/metiers.mp4`),
-  `sousTitres` (fichier `.vtt`), `affiche` et `descriptionAccessible`, puis passer `statut`
+- **Newsletter** (réalisation `newsletter`) : renseigner `media.apercu` (image) et `lien`
+  (fichier HTML ou PDF), puis passer `statut` à `"disponible"`. Le bouton
+  « Consulter la version complète » n’apparaît que lorsque `lien` est renseigné.
+- **Vidéo** (réalisation `video`) : renseigner `media.fichier` (par ex. `assets/video/metiers.mp4`),
+  `media.sousTitres` (`.vtt`), `media.affiche` et `media.description`, puis passer `statut`
   à `"disponible"`. Le lecteur n’apparaît que lorsque le fichier est renseigné.
-- **Calendrier** : `organisation.lignes` (le statut de chaque ligne pilote son badge).
-- **Statuts** : libellés et icônes dans `STATUTS` (le statut est toujours porté par un texte,
-  pas seulement par la couleur).
+- **Carrousel** : tableau `carrousel` (ordre d’affichage = ordre du tableau).
 
 Pour régénérer les images optimisées à partir d’un nouveau PNG source :
 
