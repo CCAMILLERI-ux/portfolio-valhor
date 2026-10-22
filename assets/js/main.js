@@ -80,6 +80,7 @@
     "<p>" + esc(C.meta.mention) + "</p>" +
     "<p>" + esc(C.meta.ia) + "</p>" +
     "<p>Portfolio personnel et indépendant : ce site n’est pas le site officiel de VALHOR et n’engage pas l’interprofession. La palette de couleurs est une proposition de travail, et non une charte officielle.</p>" +
+    "<p>" + esc(C.intro.destinataire.mention) + "</p>" +
     "<p>Site conçu en tenant compte des bonnes pratiques d’accessibilité. Aucun audit de conformité n’a été réalisé. Aucun outil de suivi n’est utilisé.</p>" +
     '<p><a href="#haut">Revenir en haut de la page</a></p>' +
     "</div>";
@@ -95,7 +96,11 @@
   html += '<section class="hero" aria-labelledby="intro-titre">' +
     '<div class="wrap hero__grid">' +
     '<div class="hero__text">' +
+    '<div class="recipient">' +
     '<p class="eyebrow">' + esc(C.intro.surtitre) + "</p>" +
+    '<picture><source type="image/webp" srcset="' + esc(C.intro.destinataire.logo) + '.webp">' +
+    '<img class="recipient__logo" src="' + esc(C.intro.destinataire.logo) + '.png" width="600" height="149" alt="' + esc(C.intro.destinataire.alt) + '"></picture>' +
+    "</div>" +
     '<h1 id="intro-titre">' + esc(C.intro.titre) + "</h1>" +
     '<p class="hero__lead">' + esc(C.intro.texte) + "</p>" +
     '<p class="hero__signature">' + esc(C.intro.signature) + "</p>" +

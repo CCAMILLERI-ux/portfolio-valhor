@@ -44,7 +44,14 @@ window.PORTFOLIO = {
   ],
 
   intro: {
-    surtitre: "Candidature · Chargé de projet Communication digitale et éditoriale · VALHOR",
+    surtitre: "Candidature au poste de Chargé de projet Communication digitale et éditoriale",
+    // Logo de l'organisation visée : identifie le destinataire, pas l'éditeur du site.
+    destinataire: {
+      logo: "assets/img/valhor-logo",
+      alt: "VALHOR, toutes les forces du végétal",
+      mention:
+        "Le logo VALHOR est la propriété de VALHOR. Il est reproduit uniquement pour identifier l’organisation visée par cette candidature ; ce site n’est ni édité ni validé par VALHOR."
+    },
     titre: "Valoriser les métiers du végétal, du message aux contenus",
     texte:
       "Une campagne exploratoire imaginée pour VALHOR, pour illustrer ma manière de concevoir, produire et coordonner une communication digitale et éditoriale.",
