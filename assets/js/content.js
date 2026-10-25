@@ -27,8 +27,6 @@ window.PORTFOLIO = {
     role: "Communication digitale & éditoriale",
     mention:
       "Proposition exploratoire réalisée dans le cadre de ma candidature. Campagne non commandée et non diffusée.",
-    ia:
-      "Visuels et textes produits avec l’aide de l’IA, sous ma direction éditoriale et visuelle. Les personnes représentées sont des images générées.",
     logo: {
       image: "assets/img/valhor-logo",
       alt: "VALHOR, toutes les forces du végétal",
@@ -49,7 +47,11 @@ window.PORTFOLIO = {
       "Pour accompagner ma candidature chez VALHOR, j’ai imaginé une campagne exploratoire sur l’attractivité des métiers, déclinée en cinq réalisations qui répondent aux missions du poste.",
     profil:
       "Cheffe de projet digital, j’ai une expérience en communication digitale et institutionnelle au Marché International de Rungis (SEMMARIS).",
-    bouton: "Découvrir les réalisations"
+    bouton: "Découvrir les réalisations",
+    image: {
+      src: "assets/img/intro",
+      alt: "Deux mains tiennent une jeune pousse dans une motte de terre, à la lumière du soleil."
+    }
   },
 
   realisations: {
@@ -82,8 +84,8 @@ window.PORTFOLIO = {
           "« Concevoir, planifier et publier des contenus adaptés aux différentes plateformes, notamment LinkedIn » ; « concevoir ou adapter des visuels » ; « favoriser l’engagement des audiences ».",
         experience:
           "Animation des réseaux sociaux du Marché de Rungis et développement de ses communautés, de 1 000 à plus de 100 000 abonnés.",
-        tags: ["Social media", "LinkedIn", "Rédaction", "Direction visuelle", "Production assistée par IA"],
-        note: "Sert l’ambition « attractivité des métiers » du projet Horizon 2030. Visuels générés avec l’IA sous ma direction ; maquette sans compte officiel ni réactions."
+        tags: ["Social media", "LinkedIn", "Rédaction", "Direction visuelle"],
+        note: "Sert l’ambition « attractivité des métiers » du projet Horizon 2030."
       },
       {
         id: "newsletter",
@@ -158,7 +160,7 @@ window.PORTFOLIO = {
         production: {
           titre: "Fiche de production — vidéo « Les métiers du végétal »",
           intro:
-            "Brief de production pour une vidéo d’environ 30 secondes réalisée avec l’IA. Elle peut servir telle quelle à un prestataire ou à une production en interne.",
+            "Brief de production pour une vidéo d’environ 30 secondes. Il peut servir telle quelle à un prestataire ou à une production en interne.",
           brief: [
             { terme: "Objectif", texte: "Susciter la curiosité pour les métiers de l’horticulture, de la fleuristerie et du paysage." },
             { terme: "Public", texte: "Personnes en orientation ou en reconversion ; relais : filière, formation, partenaires institutionnels." },
@@ -183,19 +185,18 @@ window.PORTFOLIO = {
           controle: [
             "Orthographe des mots-clés et des sous-titres relue mot à mot",
             "Mains, visages et outils sans défaut de génération",
-            "Aucun texte généré dans les images, aucun logo",
+            "Aucun texte dans les images source, aucun logo",
             "Voix de synthèse ou personnelle : jamais de clonage d’une personne réelle",
             "Licence de la musique compatible avec une diffusion en ligne",
             "Écran final : logo VALHOR sur bandeau blanc, www.valhor.fr et « Proposition exploratoire non officielle · Caroline Camilleri »",
             "Sous-titres lisibles sur mobile, contraste suffisant",
             "Validation métier et communication avant diffusion"
           ],
-          note: "Les outils d’IA évoluent vite : vérifier les offres et les licences au moment de produire."
+          note: "Vérifier les offres et les licences des outils au moment de produire."
         },
         attente: "« Concevoir ou adapter des visuels, vidéos, infographies et formats multimédias » ; « veiller […] au respect de l’identité de VALHOR » ; « préparer les briefs, suivre les livrables ».",
         experience: null,
-        tags: ["Script", "Brief de production", "Voix off", "Montage", "Sous-titrage", "Production assistée par IA", "Veille"],
-        note: "Images générées avec ChatGPT, voix off générée avec ElevenLabs, puis animation (mouvements de caméra lents) et montage avec l’aide de l’IA, sous ma direction. Inspiré des principes de la vidéo « VALHOR, toutes les forces du végétal », sans en reprendre les images, la musique ni la signature."
+        tags: ["Script", "Brief de production", "Voix off", "Montage", "Sous-titrage", "Veille"]
       },
       {
         id: "article",
@@ -242,7 +243,6 @@ window.PORTFOLIO = {
           "« Contribuer à l’élaboration et au suivi du calendrier éditorial » ; « suivre et analyser les audiences » ; « gérer et optimiser les campagnes de sponsorisation ».",
         experience: "Analyse des audiences et des performances, et amélioration continue des contenus.",
         tags: ["Calendrier éditorial", "Indicateurs", "Sponsorisation"],
-        note: "Dates indicatives. Aucun résultat présenté, aucun budget engagé : la campagne n’a pas été diffusée."
       }
     ]
   },
@@ -332,6 +332,6 @@ window.PORTFOLIO = {
     ],
     note: "Méthode proposée, et non description du fonctionnement interne de VALHOR.",
     contribution:
-      "Ma contribution à cette campagne : conception éditoriale, rédaction, choix des formats, direction visuelle et production assistée par IA."
+      "Ma contribution à cette campagne : conception éditoriale, rédaction, choix des formats, direction visuelle et production."
   }
 };

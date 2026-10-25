@@ -67,15 +67,15 @@
 
   slot("footer").innerHTML =
     '<p class="site-footer__name">' + esc(C.meta.autrice) + " — " + esc(C.meta.role) + "</p>" +
-    "<p>" + esc(C.meta.mention) + " " + esc(C.meta.ia) + "</p>" +
-    "<p>" + esc(C.meta.logo.mention) + " La palette s’inspire de l’univers public de VALHOR sans en être la charte officielle. Titres en Montserrat (licence libre SIL OFL).</p>" +
-    "<p>Site conçu en tenant compte des bonnes pratiques d’accessibilité, sans audit de conformité. Aucun outil de suivi.</p>";
+    "<p>" + esc(C.meta.mention) + "</p>" +
+    "<p>" + esc(C.meta.logo.mention) + " La palette s’inspire de l’univers public de VALHOR sans en être la charte officielle.</p>";
 
   /* ---------- Introduction ---------- */
 
   var html = "";
   var I = C.intro;
-  html += '<section class="hero" aria-labelledby="intro-titre"><div class="wrap hero__inner">' +
+  html += '<section class="hero" aria-labelledby="intro-titre"><div class="wrap hero__grid">' +
+    '<div class="hero__inner">' +
     '<div class="hero__recipient">' +
     '<p class="eyebrow">' + esc(I.surtitre) + "</p>" +
     '<picture><source type="image/webp" srcset="' + esc(C.meta.logo.image) + '.webp">' +
@@ -85,6 +85,9 @@
     '<p class="lead">' + esc(I.texte) + "</p>" +
     '<p class="hero__profile">' + esc(I.profil) + "</p>" +
     '<a class="btn btn--primary" href="#realisations">' + esc(I.bouton) + icone("arrow") + "</a>" +
+    "</div>" +
+    '<figure class="hero__image"><picture><source type="image/webp" srcset="' + esc(I.image.src) + '.webp">' +
+    '<img src="' + esc(I.image.src) + '.jpg" width="900" height="900" alt="' + esc(I.image.alt) + '" fetchpriority="high" decoding="async"></picture></figure>' +
     "</div></section>";
 
   /* ---------- Médias des réalisations ---------- */
@@ -267,7 +270,7 @@
         "<div><dt>Compétences illustrées</dt><dd>" + liste(p.tags, "tags") + "</dd></div>" +
         "</dl>" +
         extra +
-        '<p class="project__note">' + esc(p.note) + "</p>" +
+        (p.note ? '<p class="project__note">' + esc(p.note) + "</p>" : "") +
         "</div></article></li>";
     }).join("") +
     "</ol></div></section>";

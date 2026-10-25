@@ -24,7 +24,7 @@
   slot("role").textContent = C.meta.role;
   slot("footer").innerHTML =
     '<p class="site-footer__name">' + esc(C.meta.autrice) + " — " + esc(C.meta.role) + "</p>" +
-    "<p>" + esc(C.meta.mention) + " " + esc(C.meta.ia) + "</p>";
+    "<p>" + esc(C.meta.mention) + "</p>";
 
   var plans = V.media.decoupage;
   // Texte continu : « serre… » + « … il y a » devient « serre… il y a ».
@@ -55,7 +55,7 @@
   // Découpage et prompts
   html += '<section class="section section--alt" aria-labelledby="decoupage-titre"><div class="wrap">' +
     '<h2 id="decoupage-titre">Découpage et prompts</h2>' +
-    '<p class="section__intro fiche-intro">Prompts en anglais, souvent mieux compris par les générateurs. Une image fixe par plan, puis une animation de 5 secondes.</p>' +
+    '<p class="section__intro fiche-intro">Une image fixe par plan, puis une animation de 5 secondes.</p>' +
     '<ol class="fiche-plans">' +
     plans.map(function (d, i) {
       return '<li class="fiche-plan">' +

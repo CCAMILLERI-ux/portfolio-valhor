@@ -220,6 +220,11 @@ a { color: var(--forest); text-underline-offset: 0.18em; }
 
 .hero { padding-block: var(--section-y); background: var(--surface); border-bottom: 1px solid var(--border); }
 .hero__inner { display: grid; gap: 1.25rem; justify-items: start; }
+.hero__grid { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 900px) { .hero__grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 3.5rem; } }
+.hero__image { margin: 0; }
+.hero__image img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
+@media (max-width: 899px) { .hero__image img { aspect-ratio: 16 / 10; } }
 .hero__recipient { display: grid; gap: 0.6rem; justify-items: start; }
 .hero__logo { width: auto; height: clamp(30px, 3vw, 40px); }
 .lead { max-width: 62ch; font-size: var(--fs-lead); color: var(--ink); }
