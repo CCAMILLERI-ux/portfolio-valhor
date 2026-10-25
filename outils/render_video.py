@@ -102,7 +102,7 @@ CUES = [
     (14.08, 18.81, "Imaginer, aménager, entretenir : c’est le paysage."),
     (18.87, 21.09, "Trois univers pour travailler avec le vivant."),
     (21.15, FIN, "Et si votre avenir prenait racine dans le végétal ?"),
-    (24.0, 26.4, "Explorez les métiers et les formations avec VALHOR, l’interprofession de l’horticulture, de la fleuristerie et du paysage."),
+    (24.0, 26.4, "Explorez les métiers et les formations."),
 ]
 
 
