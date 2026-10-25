@@ -102,7 +102,7 @@ CUES = [
     (14.08, 18.81, "Imaginer, aménager, entretenir : c’est le paysage."),
     (18.87, 21.09, "Trois univers pour travailler avec le vivant."),
     (21.15, FIN, "Et si votre avenir prenait racine dans le végétal ?"),
-    (24.0, 26.4, "Explorez les métiers et les formations."),
+    (24.0, 26.4, "Explorez les métiers et les formations avec VALHOR, l’interprofession de l’horticulture, de la fleuristerie et du paysage."),
 ]
 
 
@@ -139,13 +139,18 @@ def ecran_final():
         im = Image.new("RGBA", (W, W), NIGHT + (255,))
         d = ImageDraw.Draw(im)
         grand = police(76, 800)
-        y = 150
+        y = 120
         for ligne, coul in [("Et si votre avenir", "white"), ("prenait racine", "white"), ("dans le végétal ?", LIME)]:
             d.text((90, y), ligne, font=grand, fill=coul)
             y += 94
         d.line((92, y + 36, 182, y + 36), fill=LIME_SOFT, width=3)
-        d.text((90, y + 70), "Explorez les métiers", font=police(42, 600), fill=LIME_SOFT)
-        d.text((90, y + 124), "et les formations.", font=police(42, 600), fill=LIME_SOFT)
+        appel = ["Explorez les métiers et les formations",
+                 "avec VALHOR, l’interprofession",
+                 "de l’horticulture, de la fleuristerie",
+                 "et du paysage."]
+        fa = police(38, 600)
+        for k, ligne in enumerate(appel):
+            d.text((90, y + 66 + k * 50), ligne, font=fa, fill=LIME_SOFT)
         # Bandeau blanc : logo en couleurs (lisible) et adresse du site.
         d.rectangle((0, 760, W, 920), fill="white")
         lg = logo(96)
