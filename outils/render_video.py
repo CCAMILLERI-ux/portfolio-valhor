@@ -65,44 +65,44 @@ IMG = {n: charger(n + ".webp") for n in
 
 # Plans : image, début, fin, recadrage de départ et d'arrivée (x, y, côté) en pixels
 # source, durée du fondu d'entrée.
-# Minutage calé sur la voix off ElevenLabs (25,8 s, décalée de VOIX_DECALAGE) :
+# Minutage calé sur la voix off ElevenLabs (31,2 s, décalée de VOIX_DECALAGE) :
 # chaque plan change 0,1 s avant la phrase qu'il illustre.
 VOIX_DECALAGE = 0.4
-FIN = 23.92
-DUREE = 29.0
+FIN = 23.96
+DUREE = 33.5
 
 PLANS = [
     ("parc", 0.0, 1.78, (0, 0, 1254), (60, 50, 1120), 0.0),
-    ("fleuristerie", 1.78, 3.08, (480, 320, 700), (520, 350, 640), 0.0),
-    ("horticulture", 3.08, 4.39, (720, 0, 534), (700, 0, 554), 0.0),
-    ("horticulture", 4.39, 6.79, (450, 560, 480), (500, 600, 400), 0.35),
-    ("horticulture", 6.79, 10.49, (0, 80, 1100), (154, 80, 1100), 0.35),
-    ("fleuristerie", 10.49, 14.02, (0, 0, 1254), (100, 60, 1100), 0.35),
-    ("paysage", 14.02, 18.81, (100, 450, 800), (80, 0, 900), 0.35),
-    ("triptyque", 18.81, 21.09, (0, 0, 1254), (40, 40, 1174), 0.35),
-    ("mains-pousse", 21.09, FIN, (60, 60, 1134), (140, 120, 980), 0.35),
+    ("fleuristerie", 1.78, 3.07, (480, 320, 700), (520, 350, 640), 0.0),
+    ("horticulture", 3.07, 4.50, (720, 0, 534), (700, 0, 554), 0.0),
+    ("horticulture", 4.50, 7.32, (450, 560, 480), (500, 600, 400), 0.35),
+    ("horticulture", 7.32, 10.36, (0, 80, 1100), (154, 80, 1100), 0.35),
+    ("fleuristerie", 10.36, 14.33, (0, 0, 1254), (100, 60, 1100), 0.35),
+    ("paysage", 14.33, 18.72, (100, 450, 800), (80, 0, 900), 0.35),
+    ("triptyque", 18.72, 21.29, (0, 0, 1254), (40, 40, 1174), 0.35),
+    ("mains-pousse", 21.29, FIN, (60, 60, 1134), (140, 120, 980), 0.35),
     ("FIN", FIN, DUREE, None, None, 0.5),
 ]
 
 MOTS_CLES = [
-    ("DES MÉTIERS À DÉCOUVRIR", 4.9, 6.75),
-    ("HORTICULTURE", 7.1, 10.45),
-    ("FLEURISTERIE", 10.9, 13.98),
-    ("PAYSAGE", 14.4, 18.77),
-    ("TROIS UNIVERS", 19.1, 21.05),
+    ("DES MÉTIERS À DÉCOUVRIR", 5.0, 7.28),
+    ("HORTICULTURE", 7.8, 10.32),
+    ("FLEURISTERIE", 10.8, 14.29),
+    ("PAYSAGE", 14.8, 18.68),
+    ("TROIS UNIVERS", 19.1, 21.25),
 ]
 
 CUES = [
     (0.4, 1.78, "Derrière ce massif,"),
-    (1.78, 3.08, "derrière ce bouquet,"),
-    (3.08, 4.39, "derrière cette serre…"),
-    (4.45, 6.79, "… il y a des mains, des gestes, des métiers."),
-    (6.85, 10.49, "Faire naître et grandir le végétal : c’est l’horticulture."),
-    (10.55, 14.02, "Choisir, composer, conseiller : c’est la fleuristerie."),
-    (14.08, 18.81, "Imaginer, aménager, entretenir : c’est le paysage."),
-    (18.87, 21.09, "Trois univers pour travailler avec le vivant."),
-    (21.15, FIN, "Et si votre avenir prenait racine dans le végétal ?"),
-    (24.0, 26.4, "Explorez les métiers et les formations."),
+    (1.78, 3.07, "derrière ce bouquet,"),
+    (3.07, 4.50, "derrière cette serre…"),
+    (4.56, 7.32, "… il y a des mains, des gestes, des métiers."),
+    (7.38, 10.36, "Faire naître et grandir le végétal : c’est l’horticulture."),
+    (10.42, 14.33, "Choisir, composer, conseiller : c’est la fleuristerie."),
+    (14.39, 18.72, "Imaginer, aménager, entretenir : c’est le paysage."),
+    (18.78, 21.29, "Trois univers pour travailler avec le vivant."),
+    (21.35, FIN, "Et si votre avenir prenait racine dans le végétal ?"),
+    (24.02, 31.8, "Explorez les métiers et les formations avec VALHOR, l’interprofession de l’horticulture, de la fleuristerie et du paysage."),
 ]
 
 

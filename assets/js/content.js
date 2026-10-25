@@ -119,7 +119,7 @@ window.PORTFOLIO = {
           sousTitres: null,
           affiche: "assets/video/apercu.jpg",
           description:
-            "Vidéo de 29 secondes avec voix off et sous-titres incrustés : un parc fleuri, un bouquet, une serre, puis les gestes d’un horticulteur, d’une fleuriste et d’une paysagiste, et une question finale sur fond vert, avec le logo VALHOR et l’adresse www.valhor.fr.",
+            "Vidéo de 33 secondes avec voix off et sous-titres incrustés : un parc fleuri, un bouquet, une serre, puis les gestes d’un horticulteur, d’une fleuriste et d’une paysagiste, et une question finale sur fond vert, avec le logo VALHOR et l’adresse www.valhor.fr.",
           format: "Format carré pour le fil LinkedIn · sous-titres incrustés · musique sans paroles",
           decoupage: [
             { tc: "0–4 s", image: "Parc urbain fleuri, puis écran partagé boutique / serre", voix: "Derrière ce massif, derrière ce bouquet, derrière cette serre…", ecran: null,
@@ -140,7 +140,7 @@ window.PORTFOLIO = {
             { tc: "19–21 s", image: "Mosaïque des trois métiers en simultané", voix: "Trois univers pour travailler avec le vivant.", ecran: "Trois univers",
               prompt: null,
               mouvement: "Pas de génération : mosaïque construite au montage avec les plans horticulture, fleuristerie et paysage." },
-            { tc: "21–29 s", image: "Mains tenant une jeune pousse, puis écran vert final", voix: "Et si votre avenir prenait racine dans le végétal ? Explorez les métiers et les formations.", ecran: "Explorez les métiers et les formations avec VALHOR, l’interprofession de l’horticulture, de la fleuristerie et du paysage",
+            { tc: "21–33 s", image: "Mains tenant une jeune pousse, puis écran vert final", voix: "Et si votre avenir prenait racine dans le végétal ? Explorez les métiers et les formations avec VALHOR, l’interprofession de l’horticulture, de la fleuristerie et du paysage.", ecran: "Explorez les métiers et les formations avec VALHOR, l’interprofession de l’horticulture, de la fleuristerie et du paysage",
               prompt: "Two weathered hands holding a young green sprout in rich soil, soft blurred green background, golden light, square format, photorealistic, no text.",
               mouvement: "Very slow push-in, leaves moving slightly in the breeze; end on a solid green card added in editing." }
           ]
@@ -156,7 +156,7 @@ window.PORTFOLIO = {
             { terme: "Public", texte: "Personnes en orientation ou en reconversion ; relais : filière, formation, partenaires institutionnels." },
             { terme: "Message", texte: "« Derrière chaque espace végétalisé, des métiers à découvrir. »" },
             { terme: "Diffusion", texte: "Fil LinkedIn, en relais du carrousel et de l’article." },
-            { terme: "Durée", texte: "Environ 30 secondes, en trois temps : accroche (0–7 s), trois métiers (7–21 s), question finale (21–29 s). Le montage se cale sur la voix off." },
+            { terme: "Durée", texte: "Environ 30 secondes, en trois temps : accroche (0–7 s), trois métiers (7–21 s), question finale (21–33 s). Le montage se cale sur la voix off." },
             { terme: "Références", texte: "Codes de la vidéo « VALHOR, toutes les forces du végétal » : ouverture en anaphore, plans courts sur les gestes, mots-clés à l’écran. Sans en reprendre les images, la musique ni la signature." }
           ],
           livrables: [
