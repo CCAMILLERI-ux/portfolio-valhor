@@ -489,6 +489,9 @@ a { color: var(--forest); text-underline-offset: 0.18em; }
 .devices--real:hover .device { border-color: var(--forest-2); }
 
 /* Article */
+.article-apercu { display: block; width: min(100%, 460px); border: 1px solid var(--border); border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-card); }
+.article-apercu img { display: block; width: 100%; }
+.article-apercu:hover { border-color: var(--forest); }
 .article-card {
   display: grid; gap: 0.8rem;
   width: min(100%, 440px);

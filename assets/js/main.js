@@ -196,6 +196,10 @@
   }
 
   function mediaArticle(p) {
+    if (p.media.apercu) {
+      return '<a class="article-apercu" href="' + esc(p.lien) + '">' +
+        '<img src="' + esc(p.media.apercu) + '" width="760" height="570" alt="' + esc(p.media.alt) + '" loading="lazy" decoding="async"></a>';
+    }
     return '<div class="article-card">' +
       '<p class="article-card__kicker">Angle proposé</p>' +
       '<p class="article-card__title">' + esc(p.media.sujet) + "</p>" +

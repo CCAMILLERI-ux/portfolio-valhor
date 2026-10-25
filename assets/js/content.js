@@ -202,17 +202,20 @@ window.PORTFOLIO = {
         nom: "Article web",
         titre: "Approfondir les métiers sur le site",
         texte:
-          "Missions, environnements de travail, compétences mobilisées et accès aux formations : le format long qui prolonge les formats courts.",
-        statut: "a-valider",
+          "« Métiers du végétal : des savoir-faire à découvrir, des vocations à faire grandir ». Un article de la rubrique Métiers & transmission qui s’appuie sur les concours accompagnés par VALHOR pour rendre les compétences visibles, présenté dans le gabarit d’actualité du site.",
+        statut: "disponible",
+        statutLibelle: "Article rédigé",
         media: {
           type: "article",
-          sujet: "Horticulture, fleuristerie, paysage : trois univers pour travailler avec le vivant"
+          apercu: "assets/img/article/apercu.webp",
+          alt: "Aperçu de l’article dans le gabarit d’actualité du site VALHOR : rubrique Métiers & transmission, titre et photo des trois métiers."
         },
+        lien: "article/metiers-du-vegetal.html",
+        lienLibelle: "Lire l’article",
         attente:
-          "« Rédiger et produire des contenus adaptés aux différents supports : sites internet, réseaux sociaux, newsletters ».",
+          "« Rédiger et produire des contenus adaptés aux différents supports : sites internet, réseaux sociaux, newsletters » ; « valoriser les études, projets et actions de VALHOR ».",
         experience: "Animation de sites et production de contenus éditoriaux.",
-        tags: ["Rédaction web", "Angle éditorial", "Vérification des sources"],
-        note: "Angle proposé, à documenter et à valider avant publication."
+        tags: ["Rédaction web", "Angle éditorial", "Intertitres et chapô", "Mise en page web"]
       },
       {
         id: "pilotage",
@@ -226,7 +229,7 @@ window.PORTFOLIO = {
           type: "calendrier",
           lignes: [
             { periode: "S1 · mardi", canal: "LinkedIn", format: "Carrousel + texte", statut: "disponible" },
-            { periode: "S1 · jeudi", canal: "Site web", format: "Article", statut: "a-valider" },
+            { periode: "S1 · jeudi", canal: "Site web", format: "Article Métiers & transmission", statut: "disponible" },
             { periode: "S2 · mardi", canal: "Newsletter", format: "VALHOR Info : actualités + campagne", statut: "disponible" },
             { periode: "S2 · jeudi", canal: "LinkedIn", format: "Vidéo sous-titrée", statut: "disponible" },
             { periode: "Fin S2", canal: "Tous", format: "Bilan et ajustements", statut: "en-preparation" }
