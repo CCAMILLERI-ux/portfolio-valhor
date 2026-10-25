@@ -87,18 +87,26 @@ window.PORTFOLIO = {
       },
       {
         id: "newsletter",
-        nom: "Newsletter",
-        titre: "Donner du contexte et orienter vers les contenus",
+        nom: "Newsletter VALHOR Info",
+        titre: "Informer la filière et relayer la campagne",
         texte:
-          "Objet : « Les métiers du végétal : des savoir-faire à découvrir ». Une introduction courte, trois entrées métiers, un appel vers les formations et ressources métiers.",
-        statut: "en-preparation",
-        mentionStatut: "Maquette en préparation",
-        media: { type: "newsletter", apercu: null },
-        lien: null,
-        attente: "« Coordonner la production, la validation et la diffusion de la newsletter VALHOR Info ».",
+          "Un numéro de VALHOR Info pensé pour les professionnels : développement de l’activité, rendez-vous de la filière, chiffres et prospective, puis la campagne sur les métiers, présentée comme un contenu à relayer. Codée comme un vrai e-mail (600 px, adaptée au mobile).",
+        statut: "disponible",
+        statutLibelle: "Maquette disponible",
+        media: {
+          type: "newsletter",
+          apercus: {
+            ordinateur: "assets/img/newsletter/apercu-ordinateur.webp",
+            mobile: "assets/img/newsletter/apercu-mobile.webp"
+          }
+        },
+        lien: "newsletter/valhor-info.html",
+        lienLibelle: "Consulter la newsletter",
+        attente:
+          "« Coordonner la production, la validation et la diffusion de la newsletter VALHOR Info » ; « valoriser les études, projets et actions de VALHOR auprès de ses différents publics ».",
         experience: "Conception et coordination de newsletters.",
-        tags: ["Newsletter", "Structuration", "Parcours de lecture"],
-        note: "Structure présentée ; la maquette complète sera ajoutée ici."
+        tags: ["Newsletter", "Ligne éditoriale", "Hiérarchie de l’information", "Intégration e-mail"],
+        note: "Maquette non officielle. Actualités reprises des informations publiques de valhor.fr (label Fleurs de France, Salon du Végétal, journée Palette végétale urbaine, appel d’offres) ; les blocs « Exemple » sont à documenter et valider."
       },
       {
         id: "video",
@@ -219,7 +227,7 @@ window.PORTFOLIO = {
           lignes: [
             { periode: "S1 · mardi", canal: "LinkedIn", format: "Carrousel + texte", statut: "disponible" },
             { periode: "S1 · jeudi", canal: "Site web", format: "Article", statut: "a-valider" },
-            { periode: "S2 · mardi", canal: "Newsletter", format: "Intro, 3 métiers, appel", statut: "en-preparation" },
+            { periode: "S2 · mardi", canal: "Newsletter", format: "VALHOR Info : actualités + campagne", statut: "disponible" },
             { periode: "S2 · jeudi", canal: "LinkedIn", format: "Vidéo sous-titrée", statut: "disponible" },
             { periode: "Fin S2", canal: "Tous", format: "Bilan et ajustements", statut: "en-preparation" }
           ]

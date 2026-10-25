@@ -29,9 +29,9 @@ Tout se fait dans `assets/js/content.js`. La page suit trois blocs : introductio
 cinq réalisations (chacune reliée à une attente citée de l’annonce, à mon expérience
 et aux compétences illustrées), puis la démarche.
 
-- **Newsletter** (réalisation `newsletter`) : renseigner `media.apercu` (image) et `lien`
-  (fichier HTML ou PDF), puis passer `statut` à `"disponible"`. Le bouton
-  « Consulter la version complète » n’apparaît que lorsque `lien` est renseigné.
+- **Newsletter** (réalisation `newsletter`) : maquette e-mail dans `newsletter/valhor-info.html`
+  (tableaux de 600 px, styles en ligne). Aperçus ordinateur et mobile dans `assets/img/newsletter/`
+  (à refaire par capture si la maquette change). Les blocs « Exemple » sont à documenter.
 - **Vidéo** (réalisation `video`) : fichiers dans `assets/video/` (MP4 H.264 + WebM VP9,
   image d’aperçu, sous-titres `.vtt`/`.srt`). Voix off ElevenLabs (`sources/video/voix-off.mp3`), sous-titres incrustés.
   Pour la régénérer (nouvelle image, voix off, recalage) :

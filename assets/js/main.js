@@ -146,8 +146,13 @@
   }
 
   function mediaNewsletter(p) {
-    if (p.media.apercu) {
-      return '<img class="media-img" src="' + esc(p.media.apercu) + '" alt="Aperçu de la newsletter « ' + esc(p.titre) + ' »" loading="lazy" decoding="async">';
+    var a = p.media.apercus;
+    if (a) {
+      return '<a class="devices devices--real" href="' + esc(p.lien) + '">' +
+        '<span class="device device--desktop"><img src="' + esc(a.ordinateur) + '" alt="" loading="lazy" decoding="async"></span>' +
+        '<span class="device device--mobile"><img src="' + esc(a.mobile) + '" alt="" loading="lazy" decoding="async"></span>' +
+        '<span class="sr-only">Ouvrir la maquette de la newsletter VALHOR Info</span>' +
+        "</a>";
     }
     return '<div class="placeholder">' +
       '<p class="placeholder__tag">' + icone("clock") + esc(p.mentionStatut) + "</p>" +
@@ -247,7 +252,7 @@
         extra += '<a class="btn btn--primary" href="' + esc(p.bouton.href) + '">' + esc(p.bouton.libelle) + icone("arrow") + "</a>";
       }
       if (p.lien) {
-        extra += '<a class="btn btn--primary" href="' + esc(p.lien) + '">Consulter la version complète' + icone("arrow") + "</a>";
+        extra += '<a class="btn btn--primary" href="' + esc(p.lien) + '">' + esc(p.lienLibelle || "Consulter la version complète") + icone("arrow") + "</a>";
       }
       return '<li class="project" id="' + esc(p.id) + '">' +
         '<article aria-labelledby="' + esc(p.id) + '-titre">' +
