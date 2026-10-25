@@ -150,7 +150,7 @@ window.PORTFOLIO = {
             { tc: "19–21 s", image: "Mosaïque des trois métiers en simultané", voix: "Trois univers pour travailler avec le vivant.", ecran: "Trois univers",
               prompt: null,
               mouvement: "Pas de génération : mosaïque construite au montage avec les plans horticulture, fleuristerie et paysage." },
-            { tc: "21–33 s", image: "Mains tenant une jeune pousse, puis écran vert final", voix: "Et si votre avenir prenait racine dans le végétal ? Explorez les métiers et les formations avec VALHOR, l’interprofession de l’horticulture, de la fleuristerie et du paysage.", ecran: "Explorez les métiers et les formations avec VALHOR, l’interprofession de l’horticulture, de la fleuristerie et du paysage",
+            { tc: "21–33 s", image: "Mains tenant une jeune pousse, puis écran final vert", voix: "Et si votre avenir prenait racine dans le végétal ? Explorez les métiers et les formations avec VALHOR, l’interprofession de l’horticulture, de la fleuristerie et du paysage.", ecran: "Écran final : « Et si votre avenir prenait racine dans le végétal ? », l’appel à l’action, le logo VALHOR et www.valhor.fr",
               prompt: "Two weathered hands holding a young green sprout in rich soil, soft blurred green background, golden light, square format, photorealistic, no text.",
               mouvement: "Very slow push-in, leaves moving slightly in the breeze; end on a solid green card added in editing." }
           ]

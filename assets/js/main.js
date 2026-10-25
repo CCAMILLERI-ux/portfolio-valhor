@@ -246,10 +246,21 @@
           }).join("") + "</ol></details>";
       }
       if (p.id === "video" && p.media.fichier) {
-        extra = '<details class="transcript"><summary>Lire le texte de la vidéo</summary>' +
-          '<ol class="transcript__list">' + p.media.decoupage.map(function (d) {
-            return "<li><p><strong>" + esc(d.tc) + "</strong> — " + esc(d.voix) + "</p></li>";
-          }).join("") + "</ol></details>";
+        // Script complet : voix off d'un seul tenant, puis découpage plan par plan.
+        var voixComplete = p.media.decoupage.map(function (d) { return d.voix; }).join(" ").replace(/… …\s*/g, "… ");
+        extra = '<details class="transcript"><summary>Lire le script de la vidéo</summary>' +
+          '<div class="script">' +
+          '<p class="script__titre">Voix off</p>' +
+          '<blockquote class="script__voix"><p>« ' + esc(voixComplete) + " »</p></blockquote>" +
+          '<p class="script__titre">Découpage</p>' +
+          '<ol class="script__plans">' + p.media.decoupage.map(function (d) {
+            return '<li><p class="script__tc">' + esc(d.tc) + "</p>" +
+              "<dl>" +
+              "<div><dt>Images</dt><dd>" + esc(d.image) + "</dd></div>" +
+              "<div><dt>Voix off</dt><dd>« " + esc(d.voix.replace(/^…\s*/, "")) + " »</dd></div>" +
+              (d.ecran ? "<div><dt>À l’écran</dt><dd>" + esc(d.ecran.length < 30 ? d.ecran.toUpperCase() : d.ecran) + "</dd></div>" : "") +
+              "</dl></li>";
+          }).join("") + "</ol></div></details>";
       }
       if (p.indicateurs) {
         extra = '<details class="transcript"><summary>Voir les indicateurs suivis</summary>' +

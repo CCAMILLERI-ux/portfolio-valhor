@@ -297,6 +297,17 @@ a { color: var(--forest); text-underline-offset: 0.18em; }
   list-style: none; font-size: 0.95rem;
 }
 .transcript__plain { gap: 0.4rem; padding-left: 2rem; list-style: disc; }
+.script { display: grid; gap: 0.6rem; padding: 0 0.9rem 0.9rem; font-size: 0.95rem; }
+.script__titre { font-size: var(--fs-small); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-top: 0.4rem; }
+.script__voix { margin: 0; padding: 0.7rem 0.9rem; background: var(--tint); border-left: 3px solid var(--lime); }
+.script__plans { display: grid; margin: 0; padding: 0; list-style: none; }
+.script__plans li { display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); gap: 0.6rem; padding: 0.6rem 0; border-top: 1px solid var(--border); }
+.script__tc { font-weight: 700; color: var(--forest); font-variant-numeric: tabular-nums; }
+.script__plans dl { display: grid; gap: 0.25rem; margin: 0; min-width: 0; }
+.script__plans dl div { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 0.4rem; }
+.script__plans dt { font-size: var(--fs-small); font-weight: 700; color: var(--muted); }
+.script__plans dd { margin: 0; }
+@media (max-width: 480px) { .script__plans li, .script__plans dl div { grid-template-columns: 1fr; gap: 0.1rem; } }
 .transcript__title { font-weight: 700; color: var(--forest); }
 
 /* Publication LinkedIn (maquette) */
