@@ -155,7 +155,6 @@ window.PORTFOLIO = {
               mouvement: "Very slow push-in, leaves moving slightly in the breeze; end on a solid green card added in editing." }
           ]
         },
-        bouton: { libelle: "Consulter la fiche de production", href: "fiche-video.html" },
         // Fiche de production (page fiche-video.html) : brief prête à transmettre.
         production: {
           titre: "Fiche de production — vidéo « Les métiers du végétal »",
