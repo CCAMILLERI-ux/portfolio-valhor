@@ -207,7 +207,7 @@ window.PORTFOLIO = {
         statutLibelle: "Article rédigé",
         media: {
           type: "article",
-          apercu: "assets/img/article/apercu.webp",
+          apercu: "assets/img/article/apercu-long.webp",
           alt: "Aperçu de l’article dans le gabarit d’actualité du site VALHOR : rubrique Métiers & transmission, titre et photo des trois métiers."
         },
         lien: "article/metiers-du-vegetal.html",

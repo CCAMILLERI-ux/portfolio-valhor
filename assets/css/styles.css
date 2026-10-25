@@ -508,6 +508,19 @@ a { color: var(--forest); text-underline-offset: 0.18em; }
 .article-apercu { display: block; width: min(100%, 460px); border: 1px solid var(--border); border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-card); }
 .article-apercu img { display: block; width: 100%; }
 .article-apercu:hover { border-color: var(--forest); }
+/* Comme la newsletter : capture verticale sur toute la hauteur de la colonne. */
+.project__media--article { padding: 0; justify-content: stretch; align-items: stretch; }
+.project__media--article .article-apercu {
+  position: relative; width: 100%; height: 100%; min-height: 520px;
+  border: 0; border-radius: 0; box-shadow: none; overflow: hidden;
+}
+.project__media--article .article-apercu img {
+  position: absolute; inset: 2rem 2rem 0 2rem; width: calc(100% - 4rem); height: calc(100% - 2rem);
+  object-fit: cover; object-position: top;
+  border: 1px solid var(--border); border-bottom: 0; border-radius: var(--radius-card) var(--radius-card) 0 0;
+  box-shadow: var(--shadow-card); background: #fff;
+}
+@media (max-width: 899px) { .project__media--article .article-apercu { min-height: 460px; } }
 .article-card {
   display: grid; gap: 0.8rem;
   width: min(100%, 440px);
