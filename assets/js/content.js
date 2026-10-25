@@ -323,7 +323,7 @@ window.PORTFOLIO = {
   demarche: {
     titre: "Coordonner, du brief à l’analyse",
     intro:
-      "Pour répondre à l’attente « préparer les briefs, suivre les livrables, les délais et les budgets », je m’appuie sur ma pratique de coordination des métiers, des contributeurs et des prestataires au Marché de Rungis.",
+      "Pour répondre à l’attente « préparer les briefs, suivre les livrables, les délais et les budgets », je m’appuie sur ma pratique de coordination des métiers, des contributeurs et des prestataires en tant que chef de projet digital au Marché International de Rungis (SEMMARIS).",
     etapes: [
       { titre: "Brief", texte: "Objectif, publics, message, canaux, calendrier." },
       { titre: "Collecte et vérification", texte: "Sources de la filière, données métiers, formations." },
@@ -332,8 +332,6 @@ window.PORTFOLIO = {
       { titre: "Diffusion", texte: "Publication, programmation, relais." },
       { titre: "Analyse", texte: "Indicateurs et ajustements." }
     ],
-    note: "Méthode proposée, et non description du fonctionnement interne de VALHOR.",
-    contribution:
-      "Ma contribution à cette campagne : conception éditoriale, rédaction, choix des formats, direction visuelle et production."
+    note: "Méthode proposée, et non description du fonctionnement interne de VALHOR."
   }
 };

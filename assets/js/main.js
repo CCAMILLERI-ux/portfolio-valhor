@@ -295,7 +295,6 @@
     }).join("") +
     "</ol>" +
     '<p class="project__note">' + esc(D.note) + "</p>" +
-    '<p class="contribution">' + esc(D.contribution) + "</p>" +
     "</div></section>";
 
   main.insertAdjacentHTML("beforeend", html);
