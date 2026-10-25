@@ -98,7 +98,7 @@ window.PORTFOLIO = {
         media: {
           type: "newsletter",
           apercus: {
-            ordinateur: "assets/img/newsletter/apercu-ordinateur.webp",
+            ordinateur: "assets/img/newsletter/apercu-long.webp",
             mobile: "assets/img/newsletter/apercu-mobile.webp"
           }
         },
