@@ -33,10 +33,10 @@ et aux compétences illustrées), puis la démarche.
   (fichier HTML ou PDF), puis passer `statut` à `"disponible"`. Le bouton
   « Consulter la version complète » n’apparaît que lorsque `lien` est renseigné.
 - **Vidéo** (réalisation `video`) : fichiers dans `assets/video/` (MP4 H.264 + WebM VP9,
-  image d’aperçu, sous-titres `.vtt`/`.srt`). Version actuelle muette, sous-titres incrustés.
+  image d’aperçu, sous-titres `.vtt`/`.srt`). Voix off ElevenLabs (`sources/video/voix-off.mp3`), sous-titres incrustés.
   Pour la régénérer (nouvelle image, voix off, recalage) :
-  `python3 outils/render_video.py assets/video/metiers-du-vegetal.mp4`, puis réencoder le WebM :
-  `ffmpeg -i assets/video/metiers-du-vegetal.mp4 -c:v libvpx-vp9 -b:v 0 -crf 36 -an assets/video/metiers-du-vegetal.webm`.
+  `python3 outils/render_video.py assets/video/metiers-du-vegetal.mp4 --voix sources/video/voix-off.mp3`, puis réencoder le WebM :
+  `ffmpeg -i assets/video/metiers-du-vegetal.mp4 -c:v libvpx-vp9 -b:v 0 -crf 36 -c:a libopus -b:a 96k assets/video/metiers-du-vegetal.webm`.
   Images sources dans `sources/video/` ; minutage, mots-clés et sous-titres en tête du script.
 - **Carrousel** : tableau `carrousel` (ordre d’affichage = ordre du tableau).
 - **Fiche de production vidéo** (`fiche-video.html`) : données dans `production` et

@@ -22,7 +22,6 @@ from PIL import Image, ImageDraw, ImageFont
 
 W = 1080
 FPS = 30
-DUREE = 40.0
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(RACINE, "sources", "video") + os.sep
 
@@ -33,6 +32,8 @@ LIME_SOFT = (228, 238, 192)
 
 SOUS_TITRES = "--sans-sous-titres" not in sys.argv
 SORTIE = sys.argv[1]
+# --voix chemin.mp3 : ajoute la voix off (décalée, volume normalisé).
+VOIX = sys.argv[sys.argv.index("--voix") + 1] if "--voix" in sys.argv else None
 
 
 def _ttf():
@@ -64,38 +65,44 @@ IMG = {n: charger(n + ".webp") for n in
 
 # Plans : image, début, fin, recadrage de départ et d'arrivée (x, y, côté) en pixels
 # source, durée du fondu d'entrée.
+# Minutage calé sur la voix off ElevenLabs (25,8 s, décalée de VOIX_DECALAGE) :
+# chaque plan change 0,1 s avant la phrase qu'il illustre.
+VOIX_DECALAGE = 0.4
+FIN = 23.92
+DUREE = 29.0
+
 PLANS = [
-    ("parc", 0.0, 1.6, (0, 0, 1254), (60, 50, 1120), 0.0),
-    ("fleuristerie", 1.6, 2.8, (480, 320, 700), (520, 350, 640), 0.0),
-    ("horticulture", 2.8, 4.2, (720, 0, 534), (700, 0, 554), 0.0),
-    ("horticulture", 4.2, 9.0, (450, 560, 480), (500, 600, 400), 0.4),
-    ("horticulture", 9.0, 15.0, (0, 80, 1100), (154, 80, 1100), 0.4),
-    ("fleuristerie", 15.0, 21.0, (0, 0, 1254), (100, 60, 1100), 0.4),
-    ("paysage", 21.0, 28.0, (100, 450, 800), (80, 0, 900), 0.4),
-    ("triptyque", 28.0, 33.0, (0, 0, 1254), (40, 40, 1174), 0.4),
-    ("mains-pousse", 33.0, 37.5, (60, 60, 1134), (140, 120, 980), 0.4),
-    ("FIN", 37.5, 40.0, None, None, 0.5),
+    ("parc", 0.0, 1.78, (0, 0, 1254), (60, 50, 1120), 0.0),
+    ("fleuristerie", 1.78, 3.08, (480, 320, 700), (520, 350, 640), 0.0),
+    ("horticulture", 3.08, 4.39, (720, 0, 534), (700, 0, 554), 0.0),
+    ("horticulture", 4.39, 6.79, (450, 560, 480), (500, 600, 400), 0.35),
+    ("horticulture", 6.79, 10.49, (0, 80, 1100), (154, 80, 1100), 0.35),
+    ("fleuristerie", 10.49, 14.02, (0, 0, 1254), (100, 60, 1100), 0.35),
+    ("paysage", 14.02, 18.81, (100, 450, 800), (80, 0, 900), 0.35),
+    ("triptyque", 18.81, 21.09, (0, 0, 1254), (40, 40, 1174), 0.35),
+    ("mains-pousse", 21.09, FIN, (60, 60, 1134), (140, 120, 980), 0.35),
+    ("FIN", FIN, DUREE, None, None, 0.5),
 ]
 
 MOTS_CLES = [
-    ("DES MÉTIERS À DÉCOUVRIR", 5.4, 8.8),
-    ("HORTICULTURE", 10.0, 14.8),
-    ("FLEURISTERIE", 16.0, 20.8),
-    ("PAYSAGE", 22.0, 27.8),
-    ("TROIS UNIVERS", 29.0, 32.8),
+    ("DES MÉTIERS À DÉCOUVRIR", 4.9, 6.75),
+    ("HORTICULTURE", 7.1, 10.45),
+    ("FLEURISTERIE", 10.9, 13.98),
+    ("PAYSAGE", 14.4, 18.77),
+    ("TROIS UNIVERS", 19.1, 21.05),
 ]
 
 CUES = [
-    (0.1, 1.6, "Derrière ce massif,"),
-    (1.6, 2.8, "derrière ce bouquet,"),
-    (2.8, 4.2, "derrière cette serre…"),
-    (4.4, 9.0, "… il y a des mains, des gestes, des métiers."),
-    (9.2, 15.0, "Faire naître et grandir le végétal : c’est l’horticulture."),
-    (15.2, 21.0, "Choisir, composer, conseiller : c’est la fleuristerie."),
-    (21.2, 28.0, "Imaginer, aménager, entretenir : c’est le paysage."),
-    (28.2, 33.0, "Trois univers pour travailler avec le vivant."),
-    (33.2, 37.5, "Et si votre avenir prenait racine dans le végétal ?"),
-    (37.7, 40.0, "Explorez les métiers et les formations."),
+    (0.4, 1.78, "Derrière ce massif,"),
+    (1.78, 3.08, "derrière ce bouquet,"),
+    (3.08, 4.39, "derrière cette serre…"),
+    (4.45, 6.79, "… il y a des mains, des gestes, des métiers."),
+    (6.85, 10.49, "Faire naître et grandir le végétal : c’est l’horticulture."),
+    (10.55, 14.02, "Choisir, composer, conseiller : c’est la fleuristerie."),
+    (14.08, 18.81, "Imaginer, aménager, entretenir : c’est le paysage."),
+    (18.87, 21.09, "Trois univers pour travailler avec le vivant."),
+    (21.15, FIN, "Et si votre avenir prenait racine dans le végétal ?"),
+    (24.0, 26.4, "Explorez les métiers et les formations."),
 ]
 
 
@@ -190,7 +197,7 @@ def image(t):
         mot_cle(im, texte, t, t0, t1)
     if SOUS_TITRES:
         for t0, t1, texte in CUES:
-            if t0 <= t < t1 and t < 37.5:
+            if t0 <= t < t1 and t < FIN:
                 sous_titre(im, texte)
     return im.convert("RGB")
 
@@ -213,9 +220,14 @@ def ecrire_sous_titres():
 if __name__ == "__main__":
     ecrire_sous_titres()
     cmd = [imageio_ffmpeg.get_ffmpeg_exe(), "-y", "-loglevel", "error",
-           "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", "%dx%d" % (W, W), "-r", str(FPS), "-i", "-",
-           "-c:v", "libx264", "-preset", "slow", "-crf", "23", "-pix_fmt", "yuv420p",
-           "-movflags", "+faststart", SORTIE]
+           "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", "%dx%d" % (W, W), "-r", str(FPS), "-i", "-"]
+    if VOIX:
+        retard = int(VOIX_DECALAGE * 1000)
+        cmd += ["-i", VOIX, "-map", "0:v", "-map", "1:a",
+                "-af", "adelay=%d:all=1,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100,apad" % retard,
+                "-c:a", "aac", "-b:a", "128k", "-t", str(DUREE)]
+    cmd += ["-c:v", "libx264", "-preset", "slow", "-crf", "23", "-pix_fmt", "yuv420p",
+            "-movflags", "+faststart", SORTIE]
     ff = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     for k in range(int(DUREE * FPS)):
         ff.stdin.write(np.asarray(image(k / FPS)).tobytes())
