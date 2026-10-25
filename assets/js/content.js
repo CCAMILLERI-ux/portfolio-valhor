@@ -323,7 +323,7 @@ window.PORTFOLIO = {
   demarche: {
     titre: "Coordonner, du brief à l’analyse",
     intro:
-      "Pour répondre à l’attente « préparer les briefs, suivre les livrables, les délais et les budgets », je m’appuie sur ma pratique de coordination des métiers, des contributeurs et des prestataires en tant que chef de projet digital au Marché International de Rungis (SEMMARIS).",
+      "Pour répondre à l’attente « préparer les briefs, suivre les livrables, les délais et les budgets », je m’appuie sur ma pratique et mon expérience de coordination des métiers, des contributeurs et des prestataires en tant que chef de projet digital.",
     etapes: [
       { titre: "Brief", texte: "Objectif, publics, message, canaux, calendrier." },
       { titre: "Collecte et vérification", texte: "Sources de la filière, données métiers, formations." },
