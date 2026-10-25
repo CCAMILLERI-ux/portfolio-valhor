@@ -294,7 +294,6 @@
         "<h3>" + esc(e.titre) + "</h3><p>" + esc(e.texte) + "</p></li>";
     }).join("") +
     "</ol>" +
-    '<p class="project__note">' + esc(D.note) + "</p>" +
     "</div></section>";
 
   main.insertAdjacentHTML("beforeend", html);

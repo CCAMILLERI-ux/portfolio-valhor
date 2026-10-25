@@ -331,7 +331,6 @@ window.PORTFOLIO = {
       { titre: "Validation", texte: "Relecture métier et communication." },
       { titre: "Diffusion", texte: "Publication, programmation, relais." },
       { titre: "Analyse", texte: "Indicateurs et ajustements." }
-    ],
-    note: "Méthode proposée, et non description du fonctionnement interne de VALHOR."
+    ]
   }
 };
