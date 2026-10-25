@@ -26,7 +26,7 @@ window.PORTFOLIO = {
     autrice: "Caroline Camilleri",
     role: "Communication digitale & éditoriale",
     mention:
-      "Proposition exploratoire réalisée dans le cadre de ma candidature. Campagne non commandée et non diffusée.",
+      "Proposition exploratoire réalisée dans le cadre de ma candidature.",
     logo: {
       image: "assets/img/valhor-logo",
       alt: "VALHOR, toutes les forces du végétal",
