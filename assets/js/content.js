@@ -119,7 +119,7 @@ window.PORTFOLIO = {
           sousTitres: null,
           affiche: "assets/video/apercu.jpg",
           description:
-            "Vidéo de 29 secondes avec voix off et sous-titres incrustés : un parc fleuri, un bouquet, une serre, puis les gestes d’un horticulteur, d’une fleuriste et d’une paysagiste, et une question finale sur fond vert.",
+            "Vidéo de 29 secondes avec voix off et sous-titres incrustés : un parc fleuri, un bouquet, une serre, puis les gestes d’un horticulteur, d’une fleuriste et d’une paysagiste, et une question finale sur fond vert, avec le logo VALHOR et l’adresse www.valhor.fr.",
           format: "Format carré pour le fil LinkedIn · sous-titres incrustés · musique sans paroles",
           decoupage: [
             { tc: "0–4 s", image: "Parc urbain fleuri, puis écran partagé boutique / serre", voix: "Derrière ce massif, derrière ce bouquet, derrière cette serre…", ecran: null,
@@ -178,7 +178,7 @@ window.PORTFOLIO = {
             "Aucun texte généré dans les images, aucun logo",
             "Voix de synthèse ou personnelle : jamais de clonage d’une personne réelle",
             "Licence de la musique compatible avec une diffusion en ligne",
-            "Écran final : « Proposition exploratoire · Caroline Camilleri »",
+            "Écran final : logo VALHOR sur bandeau blanc, www.valhor.fr et « Proposition exploratoire non officielle · Caroline Camilleri »",
             "Sous-titres lisibles sur mobile, contraste suffisant",
             "Validation métier et communication avant diffusion"
           ],

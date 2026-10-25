@@ -126,21 +126,35 @@ def cadre(plan, t):
 _FIN = None
 
 
+def logo(hauteur):
+    """Logo VALHOR en couleurs, tel que fourni (fond transparent)."""
+    src = Image.open(os.path.join(RACINE, "assets", "img", "valhor-logo.png")).convert("RGBA")
+    largeur = round(src.width * hauteur / src.height)
+    return src.resize((largeur, hauteur), Image.Resampling.LANCZOS)
+
+
 def ecran_final():
     global _FIN
     if _FIN is None:
-        im = Image.new("RGB", (W, W), NIGHT)
+        im = Image.new("RGBA", (W, W), NIGHT + (255,))
         d = ImageDraw.Draw(im)
-        grand = police(78, 800)
-        y = 250
+        grand = police(76, 800)
+        y = 150
         for ligne, coul in [("Et si votre avenir", "white"), ("prenait racine", "white"), ("dans le végétal ?", LIME)]:
             d.text((90, y), ligne, font=grand, fill=coul)
-            y += 96
-        d.line((92, y + 40, 182, y + 40), fill=LIME_SOFT, width=3)
-        d.text((90, y + 80), "Explorez les métiers", font=police(44, 600), fill=LIME_SOFT)
-        d.text((90, y + 136), "et les formations.", font=police(44, 600), fill=LIME_SOFT)
-        d.text((90, 960), "Proposition exploratoire · Caroline Camilleri", font=police(26, 500), fill=LIME_SOFT)
-        _FIN = im
+            y += 94
+        d.line((92, y + 36, 182, y + 36), fill=LIME_SOFT, width=3)
+        d.text((90, y + 70), "Explorez les métiers", font=police(42, 600), fill=LIME_SOFT)
+        d.text((90, y + 124), "et les formations.", font=police(42, 600), fill=LIME_SOFT)
+        # Bandeau blanc : logo en couleurs (lisible) et adresse du site.
+        d.rectangle((0, 760, W, 920), fill="white")
+        lg = logo(96)
+        im.alpha_composite(lg, (90, 792))
+        url = "www.valhor.fr"
+        f = police(36, 700)
+        d.text((W - 90 - f.getlength(url), 820), url, font=f, fill=FOREST)
+        d.text((92, 972), "Proposition exploratoire non officielle · Caroline Camilleri", font=police(24, 500), fill=LIME_SOFT)
+        _FIN = im.convert("RGB")
     return _FIN
 
 
